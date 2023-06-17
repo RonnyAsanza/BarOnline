@@ -3,6 +3,6 @@ h1{
     font-family: fantasy;
 }
 
-.fadeinleft {  
-    animation-duration: 10s;
+.animation-duration-3000 {  
+    animation-duration: 10s !important;
 }

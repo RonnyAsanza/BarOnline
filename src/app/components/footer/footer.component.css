@@ -3,3 +3,7 @@
 .text-xsm{
     font-size: 0.85em;
 }
+
+.animation-duration-3000 {  
+    animation-duration: 10s !important;
+}
