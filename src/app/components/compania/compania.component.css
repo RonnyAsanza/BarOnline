@@ -1,0 +1,24 @@
+.card-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-content {
+    width: 60%; /* Adjust this to control the width of the text content */
+    padding: 10px 20px;
+    line-height: 1.6; /* Increase line height for readability */
+}
+
+.image-content {
+    width: 40%; /* Adjust this to control the width of the image content */
+    padding: 10px 20px;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+}
+
+.text-content p {
+    text-align: justify;
+}

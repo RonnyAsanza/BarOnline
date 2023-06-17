@@ -1,3 +1,18 @@
 .card.article{
     margin-top: 1em;
 }
+
+.product-image span img{
+    width: 10em !important; /* O cualquier tamaño que prefieras */
+    height: 10em; /* Asegúrate de que la altura y la anchura sean iguales para mantener la relación de aspecto */
+}
+
+p-image.product-image span img {
+    width: 10em !important; /* O cualquier tamaño que prefieras */
+    height: 10em; /* Asegúrate de que la altura y la anchura sean iguales para mantener la relación de aspecto */
+}
+
+  
+  
+  
+  

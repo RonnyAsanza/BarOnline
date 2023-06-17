@@ -1,0 +1,49 @@
+<div class="card flex justify-content-center mt-3">
+  <p-card header="Teach Bar Online" class="w-full">
+    <div class="grid bg-black-alpha-90 p-3 border-round-2xl">
+      
+      <div class="col-12 md:col-6 lg:col-4 sm:flex-nowrap text-center">
+        <span class="text-2xl font-bold font-italic text-white">Horario</span>
+        <p class="text-white sm:text-sm text-xsm"><i class="pi pi-calendar-minus border-circle mr-2 p-2 bg-red-500"></i>De lunes a domingo las 24h</p>
+      </div>
+      <div class="col-12 md:col-6 lg:col-4 sm:flex-nowrap text-center">
+        <span class="text-2xl font-bold font-italic text-white">¿Tienes dudas?</span>
+        <p class="text-white sm:text-base text-xsm"><i class="pi pi-envelope border-circle mr-2 p-2 bg-primary"></i>ronnyasanza@gmail.com</p>
+      </div>
+      <div class="col-12 md:col-6 lg:col-4 sm:flex-nowrap text-center">
+        <span class="text-2xl font-bold font-italic text-white mr-2">Síguenos</span>
+        <p>
+          <p-avatar styleClass="mr-2" size="large" [style]="{ 'background-color': 'green' }" shape="circle">
+            <i class="pi pi-whatsapp" style="color:white; font-size:1em"></i>
+          </p-avatar>
+          <p-avatar styleClass="mr-2" size="large" [style]="{ 'background-color': 'violet' }" shape="circle">
+            <i class="pi pi-instagram" style="color:white; font-size:1em"></i>
+          </p-avatar>
+        </p>
+      </div>
+
+      <div class="col-12 lg:col-6 sm:flex-nowrap">
+        <span class="text-2xl font-bold font-italic text-white">Contáctanos</span>
+        <span class="p-float-label mt-4">
+          <input pInputText id="email" [(ngModel)]="email" class="w-full"/>
+          <label htmlFor="email">Correo electrónico</label>
+        </span>
+        <span class="p-float-label mt-4">
+          <textarea id="float-input" rows="5" cols="30" pInputTextarea [autoResize]="true" [(ngModel)]="message" class="w-full"></textarea>
+          <label for="float-input">Summary</label>
+        </span>
+        <div class="mt-2">
+          <p-button class="cursor-pointer flex text-white" label="Enviar" [disabled]="!email || !message"></p-button>
+        </div>
+      </div>
+      <div class="col-12 lg:col-6 sm:flex-nowrap scalein animation-duration-3000 animation-iteration-infinite">
+          <img class="w-7 md:w-12rem lg:w-14rem xl:w-16rem shadow-2 block xl:block mx-auto border-round ml-5" src="../../../assets/TEACH-Bar.gif" alt="TeachBar" />
+      </div>
+      <div class="col-12 sm:flex-nowrap text-center">
+        <span class="font-italic text-white">Web desarrollada por A-Technologies</span>
+      </div>
+    </div>
+
+  </p-card>  
+</div>
+

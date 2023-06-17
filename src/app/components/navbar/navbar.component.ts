@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,8 @@ import { MenuItem } from 'primeng/api';
 })
 export class NavbarComponent implements OnInit {
   items: MenuItem[] = [];
+
+  constructor(private router: Router) {} // Inyecta el servicio Router
 
   ngOnInit() {
       this.items = [
@@ -69,7 +72,8 @@ export class NavbarComponent implements OnInit {
           },
           {
               label: 'COMPAÑÍA',
-              icon: 'pi pi-fw pi-user'
+              icon: 'pi pi-fw pi-user',
+              command: () => { this.router.navigate(['/company']); } // Añade un comando para navegar a '/company'
           },
           {
               label: 'CÓMO COMPRAR',

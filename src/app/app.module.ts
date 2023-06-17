@@ -11,19 +11,32 @@ import {RatingModule} from 'primeng/rating';
 import {TagModule} from 'primeng/tag';
 import { ButtonModule } from 'primeng/button';
 import {DropdownModule} from 'primeng/dropdown';
+import { ImageModule } from 'primeng/image';
+import { CardModule } from 'primeng/card';
+import { MenuModule } from 'primeng/menu';
+import {ListboxModule} from 'primeng/listbox';
+import { ToolbarModule } from 'primeng/toolbar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { InputMaskModule } from 'primeng/inputmask';
+import { AvatarModule } from 'primeng/avatar';
 
 //Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ArticleComponent } from './components/article/article.component';
 import { AppComponent } from './app.component';
 import { FieldsetModule } from 'primeng/fieldset';
+import { CompaniaComponent } from './components/compania/compania.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ArticleComponent
-  ],
+    ArticleComponent,
+    CompaniaComponent,
+    FooterComponent
+    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -36,7 +49,17 @@ import { FieldsetModule } from 'primeng/fieldset';
     RatingModule,
     TagModule,
     ButtonModule,
-    DropdownModule
+    DropdownModule,
+    ImageModule,
+    CardModule,
+    MenuModule,
+    ListboxModule,
+    ToolbarModule,
+    InputTextModule,
+    InputTextareaModule,
+    ScrollPanelModule,
+    InputMaskModule,
+    AvatarModule
     ],
   providers: [],
   bootstrap: [AppComponent]
