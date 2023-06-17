@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 //Model
 import { Product } from 'src/app/features/article/article.model';
+import { DrinkType } from 'src/app/enums/drink-type.enum';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-article',
@@ -11,7 +14,9 @@ import { Product } from 'src/app/features/article/article.model';
   styleUrls: ['./article.component.css']
 })
 
-export class ArticleComponent implements OnInit{
+export class ArticleComponent implements OnInit {
+  public filteredProducts: Product[] = [];
+
   products: Product[] = []
   product: Product = new Product;
   sortOptions: SelectItem[] = [];
@@ -20,91 +25,44 @@ export class ArticleComponent implements OnInit{
   sortKey: boolean = true;
   severity: string = "";
 
-  constructor(private route: ActivatedRoute) { }
-
-  createRandomProduct(product: Product): Product {
-    let addProduct = new Product();
-    addProduct.name = product.name;
-    addProduct.image = product.image;
-    addProduct.stock = product.stock;
-    addProduct.price = product.price;
-    addProduct.rating = product.rating;
-    addProduct.category = product.category;
-    addProduct.inventoryStatus = addProduct.stock < 1 ? "OUTOFSTOCK" : addProduct.stock > 36 ? "IN_STOCK" : "LOWSTOCK";
-    addProduct.severity = this.getSeverity(product);
-    return addProduct;
-  }
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
 
   ngOnInit() {
-    const product1: Product = {
-      name: 'San Miguel 33cl',
-      image: '../../../assets/sanmiguel33.jpg',
-      stock: 49,
-      price: 1.99,
-      rating: 4.5,
-      category: 'Cerveza'
-    };
-    product1.inventoryStatus = product1.stock < 1 ? "OUTOFSTOCK" : product1.stock > 36 ? "IN_STOCK" : "LOWSTOCK";
-
-    const product2: Product = {
-      name: 'Estrella Damm 33cl',
-      image: '../../../assets/estrelladamm.jpg',
-      stock: 15,
-      price: 2.99,
-      rating: 3.8,
-      category: 'Cerveza'
-    };
-    product2.inventoryStatus = product2.stock < 1 ? "OUTOFSTOCK" : product2.stock > 36 ? "IN_STOCK" : "LOWSTOCK";
-
-    const product3: Product = {
-      name: 'Estrella Galicia 33cl',
-      image: '../../../assets/estrellagalicia.jpg',
-      stock: 0,
-      price: 3.99,
-      rating: 3.8,
-      category: 'Cerveza'
-    };
-    product3.inventoryStatus = product3.stock < 1 ? "OUTOFSTOCK" : product3.stock > 36 ? "IN_STOCK" : "LOWSTOCK";
-
-    this.products.push(this.createRandomProduct(product1));
-    this.products.push(this.createRandomProduct(product2));
-    this.products.push(this.createRandomProduct(product3));
-
     this.sortOptions = [
       { label: 'Price High to Low', value: '!price' },
       { label: 'Price Low to High', value: 'price' }
     ];
 
     this.route.queryParams.subscribe(params => {
-      let beer = params['drink'];
+      let beer = parseInt(params['drink']);
+      if (beer >= 0 && beer <= 7) {
+        this.filterByCategory(beer);
+      } else {
+        // Redireccionar a /articles con drink=0
+        this.router.navigate(['/articles'], { queryParams: { drink: 0 } });
+      }
     });
+
   }
-
-  getSeverity (product: Product) {
-    switch (product.inventoryStatus) {
-        case 'INSTOCK':
-            return 'success';
-
-        case 'LOWSTOCK':
-            return 'warning';
-
-        case 'OUTOFSTOCK':
-            return 'danger';
-
-        default:
-            return '';
-    }
-  };
 
   onSortChange(event: any) {
     let value = event.value;
 
     if (value.indexOf('!') === 0) {
-        this.sortOrder = -1;
-        this.sortField = value.substring(1, value.length);
+      this.sortOrder = -1;
+      this.sortField = value.substring(1, value.length);
     } else {
-        this.sortOrder = 1;
-        this.sortField = value;
+      this.sortOrder = 1;
+      this.sortField = value;
+    }
+  }
+
+  public filterByCategory(categoryId: number) {
+    if (categoryId == DrinkType.All) {
+      this.filteredProducts = this.productService.getProducts();
+    }
+    else {
+      this.filteredProducts = this.productService.getProducts().filter(product => product.category == categoryId);
     }
   }
 

@@ -1,6 +1,6 @@
 <div class="card article">
     <p-fieldset legend="Artículos">
-        <p-dataView #dv [value]="products" [sortField]="sortField" [sortOrder]="sortOrder">
+        <p-dataView #dv [value]="filteredProducts" [sortField]="sortField" [sortOrder]="sortOrder">
 
             <ng-template pTemplate="header">
                 <div class="flex flex-column lg:flex-row md:justify-content-between">
