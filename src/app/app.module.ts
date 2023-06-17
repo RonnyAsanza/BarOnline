@@ -20,6 +20,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { InputMaskModule } from 'primeng/inputmask';
 import { AvatarModule } from 'primeng/avatar';
+import { TabViewModule } from 'primeng/tabview';
 
 //Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -28,6 +29,7 @@ import { AppComponent } from './app.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CompaniaComponent } from './components/compania/compania.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ComoComprarComponent } from './components/como-comprar/como-comprar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { FooterComponent } from './components/footer/footer.component';
     NavbarComponent,
     ArticleComponent,
     CompaniaComponent,
-    FooterComponent
+    FooterComponent,
+    ComoComprarComponent
     ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { FooterComponent } from './components/footer/footer.component';
     InputTextareaModule,
     ScrollPanelModule,
     InputMaskModule,
-    AvatarModule
+    AvatarModule,
+    TabViewModule
     ],
   providers: [],
   bootstrap: [AppComponent]

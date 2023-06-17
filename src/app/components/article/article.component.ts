@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
+import { ActivatedRoute } from '@angular/router';
 
 //Model
 import { Product } from 'src/app/features/article/article.model';
@@ -19,7 +20,7 @@ export class ArticleComponent implements OnInit{
   sortKey: boolean = true;
   severity: string = "";
 
-  constructor() {}
+  constructor(private route: ActivatedRoute) { }
 
   createRandomProduct(product: Product): Product {
     let addProduct = new Product();
@@ -31,7 +32,6 @@ export class ArticleComponent implements OnInit{
     addProduct.category = product.category;
     addProduct.inventoryStatus = addProduct.stock < 1 ? "OUTOFSTOCK" : addProduct.stock > 36 ? "IN_STOCK" : "LOWSTOCK";
     addProduct.severity = this.getSeverity(product);
-    console.log(product);
     return addProduct;
   }
 
@@ -75,10 +75,12 @@ export class ArticleComponent implements OnInit{
       { label: 'Price Low to High', value: 'price' }
     ];
 
+    this.route.queryParams.subscribe(params => {
+      let beer = params['drink'];
+    });
   }
 
   getSeverity (product: Product) {
-    console.log("--:"+product.inventoryStatus);
     switch (product.inventoryStatus) {
         case 'INSTOCK':
             return 'success';
