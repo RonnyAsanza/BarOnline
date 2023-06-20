@@ -50,12 +50,7 @@ export class NavbarComponent implements OnInit {
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Vodka } }); }
                     },
                     {
-                        label: 'Licores',
-                        icon: 'pi pi-eye',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Licores } }); }
-                    },
-                    {
-                        label: 'Resfrescos',
+                        label: 'Refrescos',
                         icon: 'pi pi-eye',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Refrescos } }); }
                     }

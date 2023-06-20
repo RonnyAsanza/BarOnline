@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { ViewChild } from '@angular/core';
+import { DataView } from 'primeng/dataview';
 
 //Model
 import { Product } from 'src/app/features/article/article.model';
@@ -16,6 +18,8 @@ import { ProductService } from '../../services/product.service';
 
 export class ArticleComponent implements OnInit {
   public filteredProducts: Product[] = [];
+  @ViewChild('dv') dataView!: DataView;
+  isLoading: boolean = false;
 
   products: Product[] = []
   product: Product = new Product;
@@ -38,7 +42,6 @@ export class ArticleComponent implements OnInit {
       if (beer >= 0 && beer <= 7) {
         this.filterByCategory(beer);
       } else {
-        // Redireccionar a /articles con drink=0
         this.router.navigate(['/articles'], { queryParams: { drink: 0 } });
       }
     });
@@ -58,12 +61,21 @@ export class ArticleComponent implements OnInit {
   }
 
   public filterByCategory(categoryId: number) {
+    this.isLoading = true;
     if (categoryId == DrinkType.All) {
       this.filteredProducts = this.productService.getProducts();
     }
     else {
       this.filteredProducts = this.productService.getProducts().filter(product => product.category == categoryId);
     }
-  }
 
+      // Reinicia la paginación a la primera página
+    if (this.dataView) {
+      this.dataView.first = 0;
+    }
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 500);
+    
+    }
 }

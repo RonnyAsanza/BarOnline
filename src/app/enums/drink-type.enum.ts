@@ -5,6 +5,5 @@ export enum DrinkType {
     Ron,
     Ginebra,
     Vodka,
-    Licores,
     Refrescos
 }

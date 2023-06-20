@@ -1,18 +1,37 @@
-.card.article{
-    margin-top: 1em;
-}
-
-.product-image span img{
-    width: 10em !important; /* O cualquier tamaño que prefieras */
-    height: 10em; /* Asegúrate de que la altura y la anchura sean iguales para mantener la relación de aspecto */
+.product-image span img {
+    width: 10em !important;
+    /* O cualquier tamaño que prefieras */
+    height: 10em;
+    /* Asegúrate de que la altura y la anchura sean iguales para mantener la relación de aspecto */
 }
 
 p-image.product-image span img {
-    width: 10em !important; /* O cualquier tamaño que prefieras */
-    height: 10em; /* Asegúrate de que la altura y la anchura sean iguales para mantener la relación de aspecto */
+    width: 10em !important;
+    /* O cualquier tamaño que prefieras */
+    height: 10em;
+    /* Asegúrate de que la altura y la anchura sean iguales para mantener la relación de aspecto */
 }
 
-  
-  
-  
-  
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* o puedes usar 'absolute' dependiendo de tus necesidades */
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    /* Esto asegura que el spinner esté por encima de los demás elementos */
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Un fondo semitransparente, puedes ajustarlo a tus necesidades */
+}
