@@ -38,7 +38,9 @@ export class ArticleComponent implements OnInit {
     ];
 
     this.route.queryParams.subscribe(params => {
-      let beer = parseInt(params['drink']);
+      let drink = params['drink'];
+      let beer = /^\d+$/.test(drink) ? parseInt(drink) : NaN;      
+      
       if (beer >= 0 && beer <= 7) {
         this.filterByCategory(beer);
       } else {

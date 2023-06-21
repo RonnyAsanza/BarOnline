@@ -10,9 +10,26 @@ export class FooterComponent implements OnInit {
   email: string = "";
   message: string = "";
   value: string | undefined;
+  visibleModal: boolean = false;
+  position: string = 'center';
 
-  constructor() {}
-  
-  ngOnInit() {
+  constructor() { }
+
+  ngOnInit() { }
+
+  sendForm(message: string, email: string) {
+    if (!message || !email) {
+      return;
     }
+
+    console.log(email + " envia " + message);
+    this.position = 'right';
+    this.visibleModal = true;
+    this.email = "";
+    this.message = "";
+
+    setTimeout(() => {
+      this.visibleModal = false;
+    }, 5000);
+  }
 }

@@ -22,6 +22,7 @@ import { InputMaskModule } from 'primeng/inputmask';
 import { AvatarModule } from 'primeng/avatar';
 import { TabViewModule } from 'primeng/tabview';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { DialogModule } from 'primeng/dialog';
 
 //Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -65,7 +66,8 @@ import { ComoComprarComponent } from './components/como-comprar/como-comprar.com
     InputMaskModule,
     AvatarModule,
     TabViewModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    DialogModule
     ],
   providers: [],
   bootstrap: [AppComponent]

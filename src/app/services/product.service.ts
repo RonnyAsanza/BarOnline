@@ -9,6 +9,7 @@ export class ProductService {
     private products: Product[] = [];
 
     constructor() {
+        //Sustituir por llamada al servidor
         const productData = [
             //Cerveza
             {
