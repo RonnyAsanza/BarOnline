@@ -23,6 +23,7 @@ import { AvatarModule } from 'primeng/avatar';
 import { TabViewModule } from 'primeng/tabview';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { DialogModule } from 'primeng/dialog';
+import { MessagesModule } from 'primeng/messages';
 
 //Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -67,7 +68,8 @@ import { ComoComprarComponent } from './components/como-comprar/como-comprar.com
     AvatarModule,
     TabViewModule,
     ProgressSpinnerModule,
-    DialogModule
+    DialogModule,
+    MessagesModule
     ],
   providers: [],
   bootstrap: [AppComponent]

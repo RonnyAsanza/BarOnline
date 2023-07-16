@@ -13,7 +13,7 @@ export class ProductService {
         const productData = [
             //Cerveza
             {
-                name: 'San Miguel 33cl',
+                name: 'San Miguel 33 CL',
                 image: '../../../assets/Cerveza/sanmiguel33.jpg',
                 stock: 49,
                 price: 1.99,

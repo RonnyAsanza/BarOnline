@@ -99,7 +99,7 @@ export class NavbarComponent implements OnInit {
             {
                 label: 'WHATSAPP',
                 icon: 'pi pi-whatsapp',
-                command: () => { window.open('https://wa.me/658230355', '_blank'); }
+                command: () => { window.open('https://wa.me/+34658230355', '_blank'); }
             }
         ];
     }

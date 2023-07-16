@@ -22,22 +22,32 @@
           >Síguenos</span
         >
         <p>
-          <p-avatar
-            styleClass="mr-2"
-            size="large"
-            [style]="{ 'background-color': 'green' }"
-            shape="circle"
-          >
-            <i class="pi pi-whatsapp" style="color: white; font-size: 1em"></i>
-          </p-avatar>
-          <p-avatar
-            styleClass="mr-2"
-            size="large"
-            [style]="{ 'background-color': 'violet' }"
-            shape="circle"
-          >
-            <i class="pi pi-instagram" style="color: white; font-size: 1em"></i>
-          </p-avatar>
+          <a href="https://wa.me/+34658230355">
+            <p-avatar
+              styleClass="mr-2"
+              size="large"
+              [style]="{ 'background-color': 'green' }"
+              shape="circle"
+            >
+              <i
+                class="pi pi-whatsapp"
+                style="color: white; font-size: 1em"
+              ></i>
+            </p-avatar>
+          </a>
+          <a href="https://instagram.com/ronnyasanza">
+            <p-avatar
+              styleClass="mr-2"
+              size="large"
+              [style]="{ 'background-color': 'violet' }"
+              shape="circle"
+            >
+              <i
+                class="pi pi-instagram"
+                style="color: white; font-size: 1em"
+              ></i>
+            </p-avatar>
+          </a>
         </p>
       </div>
 
@@ -68,7 +78,7 @@
             (click)="sendForm(email, message)"
           ></p-button>
         </div>
-
+        <p-messages></p-messages>
         <div class="card flex flex-column align-items-center gap-2">
           <p-dialog
             header="Mensaje enviado con éxito"
@@ -85,7 +95,6 @@
             </p>
           </p-dialog>
         </div>
-        
       </div>
       <div
         class="col-12 lg:col-6 sm:flex-nowrap scalein animation-duration-3000 animation-iteration-infinite"

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';;
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.css'],
+  providers: [MessageService],
 })
 
 export class FooterComponent implements OnInit {
@@ -13,7 +15,7 @@ export class FooterComponent implements OnInit {
   visibleModal: boolean = false;
   position: string = 'center';
 
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   ngOnInit() { }
 
@@ -22,14 +24,14 @@ export class FooterComponent implements OnInit {
       return;
     }
 
-    console.log(email + " envia " + message);
     this.position = 'right';
     this.visibleModal = true;
     this.email = "";
     this.message = "";
-
+    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Via MessageService' });
     setTimeout(() => {
       this.visibleModal = false;
+      this.messageService.clear();
     }, 5000);
   }
 }
