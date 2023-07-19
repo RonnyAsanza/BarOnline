@@ -16,81 +16,86 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
         this.items = [
             {
+                label: 'INICIO',
+                icon: 'fa-solid fa-house',
+                command: () => { this.router.navigate(['/inicio']); }
+            },
+            {
                 label: 'BEBIDAS',
-                icon: 'pi pi-shopping-cart',
+                icon: 'fa-solid fa-wine-glass',
                 items: [
                     {
                         label: 'Todas',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-eye',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.All } }); } 
                     },
                     {
                         label: 'Cerveza',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-beer-mug-empty',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Cerveza } }); } 
                     },
                     {
                         label: 'Whisky',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-whiskey-glass',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Whisky } }); }
                     },
                     {
                         label: 'Ron',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-wine-bottle',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Ron } }); }
                     },
                     {
                         label: 'Ginebra',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-bottle-droplet',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Ginebra } }); }
                     },
                     {
                         label: 'Vodka',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-champagne-glasses',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Vodka } }); }
                     },
                     {
                         label: 'Refrescos',
-                        icon: 'pi pi-eye',
+                        icon: 'fa-solid fa-glass-water',
                         command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Refrescos } }); }
                     }
                 ]
             },
             {
                 label: '¡OFERTAS!',
-                icon: 'pi pi-bolt',
+                icon: 'fa-solid fa-bolt-lightning',
                 items: [
                     {
                         label: 'Cerveza',
-                        icon: 'pi pi-box'
+                        icon: 'fa-solid fa-beer-mug-empty',
                     },
                     {
                         label: 'Whisky',
-                        icon: 'pi pi-box'
+                        icon: 'fa-solid fa-whiskey-glass',
                     },
                     {
                         label: 'Ron',
-                        icon: 'pi pi-box'
+                        icon: 'fa-solid fa-wine-bottle',
                     },
                     {
                         label: 'Ginebra',
-                        icon: 'pi pi-box'
+                        icon: 'fa-solid fa-bottle-droplet',
                     }
                 ]
             },
             {
                 label: 'COMPAÑÍA',
-                icon: 'pi pi-fw pi-user',
+                icon: 'fa-solid fa-building',
                 command: () => { this.router.navigate(['/company']); } // Añade un comando para navegar a '/company'
             },
             {
                 label: 'CÓMO COMPRAR',
-                icon: 'pi pi-wallet',
+                icon: 'fa-solid fa-cart-shopping',
                 command: () => { this.router.navigate(['/howtobuy']); } // Añade un comando para navegar a '/howtobuy'
             },
             {
                 label: 'CONTACTAR',
-                icon: 'pi pi-mobile',
+                icon: 'fa-solid fa-address-card',
                 command: () => {
                     const element = document.getElementById('footerId');
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -98,7 +103,7 @@ export class NavbarComponent implements OnInit {
             },
             {
                 label: 'WHATSAPP',
-                icon: 'pi pi-whatsapp',
+                icon: 'fa-brands fa-square-whatsapp fa-beat fa-lg',
                 command: () => { window.open('https://wa.me/+34658230355', '_blank'); }
             }
         ];

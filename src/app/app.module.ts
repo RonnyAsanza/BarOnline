@@ -33,6 +33,7 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { CompaniaComponent } from './components/compania/compania.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComoComprarComponent } from './components/como-comprar/como-comprar.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ComoComprarComponent } from './components/como-comprar/como-comprar.com
     ArticleComponent,
     CompaniaComponent,
     FooterComponent,
-    ComoComprarComponent
+    ComoComprarComponent,
+    InicioComponent
     ],
   imports: [
     BrowserModule,

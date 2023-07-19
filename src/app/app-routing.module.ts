@@ -5,13 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompaniaComponent } from './components/compania/compania.component';
 import { ArticleComponent } from './components/article/article.component';
 import { ComoComprarComponent } from './components/como-comprar/como-comprar.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/articles', pathMatch: 'full'},
   { path: 'articles', component: ArticleComponent },
   { path: 'company', component: CompaniaComponent },
   { path: 'howtobuy', component: ComoComprarComponent },
-  { path: '**', redirectTo: '/articles', pathMatch: 'full'}
+  { path: 'inicio', component: InicioComponent },
+  { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
 
 @NgModule({
