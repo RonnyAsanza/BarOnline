@@ -2,7 +2,3 @@ h1{
     margin: 0.25em 1em 0.25em;
     font-family: fantasy;
 }
-
-.animation-duration-3000 {  
-    animation-duration: 10s !important;
-}

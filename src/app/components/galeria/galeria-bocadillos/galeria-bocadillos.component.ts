@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoBocadillosService } from '../../../services/photo/bocadillos/photo-bocadillos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-galeria-bocadillos',
@@ -24,11 +25,16 @@ export class GaleriaBocadillosComponent implements OnInit {
     }
   ];
 
-  constructor(private photoBocadillosService: PhotoBocadillosService) { }
+  constructor(private photoBocadillosService: PhotoBocadillosService,  private router: Router) { }
 
   ngOnInit() {
     this.photoBocadillosService.getImages().then((images) => {
       this.images = images;
+    });
+  }
+
+  navegar(ruta: string) {
+    this.router.navigate([ruta]).then(() => {
     });
   }
 }

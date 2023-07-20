@@ -1,5 +1,18 @@
-
-<app-menu></app-menu>
+<div class="mt-3 overflow-hidden relative">
+  <div class="bg-menu kenburns-top absolute w-full h-full"></div>
+  <div class="grid">
+    <div class="w-full mt-3 mb-1">
+      <div class="card flex justify-content-center">
+        <p-image
+          src="../../../../assets/photomenulogo.jpg"
+          alt="Image"
+          width="650"
+          [preview]="true"
+        ></p-image>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="card-container mt-3">
   <p-card class="text-center">
@@ -7,7 +20,9 @@
       <div class="p-2 text-6xl uppercase font-bold">ventajas</div>
     </ng-template>
     <div class="grid">
-      <div class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mb-3">
+      <div
+        class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mb-3"
+      >
         <div class="card flex justify-content-center">
           <p-card header="ACCESIBILIDAD SIN LÍMITES">
             <i class="fa-solid fa-hands m-1 text-8xl mb-3"></i>
@@ -22,7 +37,9 @@
           </p-card>
         </div>
       </div>
-      <div class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mb-3">
+      <div
+        class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mb-3"
+      >
         <div class="card flex justify-content-center">
           <p-card header="SELECCIÓN INCOMPARABLE">
             <i class="fa-solid fa-section m-1 text-8xl mb-3"></i>
@@ -36,7 +53,9 @@
           </p-card>
         </div>
       </div>
-      <div class="col transition-colors transition-duration-500 hover:bg-pink-600 mb-3">
+      <div
+        class="col transition-colors transition-duration-500 hover:bg-pink-600 mb-3"
+      >
         <div class="card flex justify-content-center">
           <p-card header="ENTREGA SEGURA Y RÁPIDA">
             <i class="fa-solid fa-truck mt-1 text-8xl mb-3"></i>
@@ -53,7 +72,9 @@
       </div>
     </div>
     <div class="grid">
-      <div class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mt-3">
+      <div
+        class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mt-3"
+      >
         <div class="card flex justify-content-center">
           <p-card header="OPCIONES PERSONALIZADAS">
             <i class="fa-brands fa-intercom mt-1 text-8xl mb-3"></i>
@@ -67,7 +88,9 @@
           </p-card>
         </div>
       </div>
-      <div class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mt-3">
+      <div
+        class="col transition-colors transition-duration-500 hover:bg-pink-600 mr-3 mt-3"
+      >
         <div class="card flex justify-content-center">
           <p-card header="EVITA EL DESPERDICIO">
             <i class="fa-solid fa-dumpster mt-1 text-8xl mb-3"></i>
@@ -81,7 +104,9 @@
           </p-card>
         </div>
       </div>
-      <div class="col transition-colors transition-duration-500 hover:bg-pink-600 mt-3">
+      <div
+        class="col transition-colors transition-duration-500 hover:bg-pink-600 mt-3"
+      >
         <div class="card flex justify-content-center">
           <p-card header="EXPERIENCIA SEGURA">
             <i class="fa-solid fa-file-shield mt-1 text-8xl mb-3"></i>
@@ -98,5 +123,7 @@
     </div>
   </p-card>
 </div>
+
+<app-menu></app-menu>
 
 <app-galeria></app-galeria>

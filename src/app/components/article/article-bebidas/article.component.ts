@@ -44,7 +44,7 @@ export class ArticleComponent implements OnInit {
       if (beer >= 0 && beer <= 7) {
         this.filterByCategory(beer);
       } else {
-        this.router.navigate(['/articles'], { queryParams: { drink: 0 } });
+        this.router.navigate(['/articles/drinks'], { queryParams: { drink: 0 } });
       }
     });
   }

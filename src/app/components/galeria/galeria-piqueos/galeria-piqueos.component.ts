@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoPiqueosService } from '../../../services/photo/piqueos/photo-piqueos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-galeria-piqueos',
@@ -24,11 +25,16 @@ export class GaleriaPiqueosComponent implements OnInit {
     }
   ];
 
-  constructor(private photoPiqueosService: PhotoPiqueosService) { }
+  constructor(private photoPiqueosService: PhotoPiqueosService,  private router: Router) { }
 
   ngOnInit() {
     this.photoPiqueosService.getImages().then((images) => {
       this.images = images;
+    });
+  }
+
+  navegar(ruta: string) {
+    this.router.navigate([ruta]).then(() => {
     });
   }
 }

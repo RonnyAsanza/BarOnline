@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PhotoAlcoholService } from '../../../../services/photo/bebidas/alcohol/photo-alcohol.service';
 import { PhotoCervezaService } from '../../../../services/photo/bebidas/cerveza/photo-cerveza.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bebidas',
@@ -27,7 +28,7 @@ export class BebidasComponent {
     }
   ];
 
-  constructor(private photoAlcoholService: PhotoAlcoholService, private photoCervezasService: PhotoCervezaService) {
+  constructor(private photoAlcoholService: PhotoAlcoholService, private photoCervezasService: PhotoCervezaService, private router: Router) {
 
   }
 
@@ -46,6 +47,11 @@ export class BebidasComponent {
     if (this.imagesAcohol.length > 0 && this.imagesCerveza.length > 0) {
       this.images = this.imagesCerveza.concat(this.imagesAcohol);
     }
+  }
+
+  navegar(ruta: string) {
+    this.router.navigate([ruta]).then(() => {
+    });
   }
 
 }
