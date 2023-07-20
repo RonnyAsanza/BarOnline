@@ -1,14 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
 @import 'primeflex/primeflex.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 .image-item {
-    width: 350px;
-    height: 450px;
+    width: 225px;
+    height: 275px;
     display: block;
 }
 
 .thumbnail-item {
     width: 100px;
     height: 125px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .image-item {
+        width: 300px;
+        height: 400px;
+    }
+
+    .thumbnail-item {
+        width: 75px;
+        height: 100px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .image-item {
+        width: 250px;
+        height: 350px;
+    }
+
+    .thumbnail-item {
+        width: 60px;
+        height: 85px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .image-item {
+        width: 350px;
+        height: 450px;
+    }
+
+    .thumbnail-item {
+        width: 100px;
+        height: 125px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .image-item {
+        width: 400px;
+        height: 500px;
+    }
+
+    .thumbnail-item {
+        width: 120px;
+        height: 150px;
+    }
 }
