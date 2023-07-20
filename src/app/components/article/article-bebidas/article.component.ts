@@ -8,7 +8,7 @@ import { DataView } from 'primeng/dataview';
 //Model
 import { Product } from 'src/app/features/article/article.model';
 import { DrinkType } from 'src/app/enums/drink-type.enum';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../../services/products/product-bebidas/product.service';
 
 @Component({
   selector: 'app-article',
@@ -47,7 +47,6 @@ export class ArticleComponent implements OnInit {
         this.router.navigate(['/articles'], { queryParams: { drink: 0 } });
       }
     });
-
   }
 
   onSortChange(event: any) {

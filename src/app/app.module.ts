@@ -27,13 +27,23 @@ import { MessagesModule } from 'primeng/messages';
 
 //Componentes
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ArticleComponent } from './components/article/article.component';
+import { ArticleComponent } from './components/article/article-bebidas/article.component';
 import { AppComponent } from './app.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { CompaniaComponent } from './components/compania/compania.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ComoComprarComponent } from './components/como-comprar/como-comprar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+import { GalleriaModule } from 'primeng/galleria';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import { GaleriaCervezaComponent } from './components/galeria/galeria-bebidas/galeria-cerveza/galeria-cerveza.component';
+import { GaleriaAlcoholComponent } from './components/galeria/galeria-bebidas/galeria-alcohol/galeria-alcohol.component';
+import { BebidasComponent } from './components/galeria/galeria-bebidas/bebidas/bebidas.component';
+import { GaleriaBocadillosComponent } from './components/galeria/galeria-bocadillos/galeria-bocadillos.component';
+import { GaleriaPiqueosComponent } from './components/galeria/galeria-piqueos/galeria-piqueos.component';
+import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
+import { SnacksComponent } from './components/article/article-snacks/snacks/snacks.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +53,15 @@ import { InicioComponent } from './components/inicio/inicio.component';
     CompaniaComponent,
     FooterComponent,
     ComoComprarComponent,
-    InicioComponent
+    InicioComponent,
+    GaleriaComponent,
+    GaleriaCervezaComponent,
+    GaleriaAlcoholComponent,
+    BebidasComponent,
+    GaleriaBocadillosComponent,
+    GaleriaPiqueosComponent,
+    BocadillosComponent,
+    SnacksComponent
     ],
   imports: [
     BrowserModule,
@@ -71,7 +89,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
     TabViewModule,
     ProgressSpinnerModule,
     DialogModule,
-    MessagesModule
+    MessagesModule,
+    GalleriaModule,
+    RadioButtonModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

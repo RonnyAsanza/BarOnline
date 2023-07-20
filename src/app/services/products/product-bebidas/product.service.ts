@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/features/article/article.model';
-import { DrinkType } from '../enums/drink-type.enum';
+import { DrinkType } from '../../../enums/drink-type.enum';
 
 @Injectable({
     providedIn: 'root'

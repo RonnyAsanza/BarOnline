@@ -3,13 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 //Components
 import { CompaniaComponent } from './components/compania/compania.component';
-import { ArticleComponent } from './components/article/article.component';
+import { ArticleComponent } from './components/article/article-bebidas/article.component';
 import { ComoComprarComponent } from './components/como-comprar/como-comprar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
+import { SnacksComponent } from './components/article/article-snacks/snacks/snacks.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/articles', pathMatch: 'full'},
-  { path: 'articles', component: ArticleComponent },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full'},
+  { path: 'articles/drinks', component: ArticleComponent },
+  { path: 'articles/sandwich', component: BocadillosComponent },
+  { path: 'articles/snacks', component: SnacksComponent },
   { path: 'company', component: CompaniaComponent },
   { path: 'howtobuy', component: ComoComprarComponent },
   { path: 'inicio', component: InicioComponent },

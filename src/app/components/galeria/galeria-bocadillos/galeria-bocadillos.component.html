@@ -1,0 +1,15 @@
+<div class="col">
+  <div class="flex justify-content-center">
+    <p-galleria
+      [value]="images"
+      [showIndicators]="true"
+      [showThumbnails]="false"
+      [responsiveOptions]="responsiveOptions"
+      [containerStyle]="{ 'max-width': '640px' }"
+    >
+      <ng-template pTemplate="item" let-item>
+        <img class="image-item" [src]="item.itemImageSrc" />
+      </ng-template>
+    </p-galleria>
+  </div>
+</div>

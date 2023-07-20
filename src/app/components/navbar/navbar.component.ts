@@ -21,43 +21,59 @@ export class NavbarComponent implements OnInit {
                 command: () => { this.router.navigate(['/inicio']); }
             },
             {
-                label: 'BEBIDAS',
-                icon: 'fa-solid fa-wine-glass',
+                label: 'ARTÍCULOS',
+                icon: 'fa-solid fa-newspaper',
                 items: [
                     {
-                        label: 'Todas',
-                        icon: 'fa-solid fa-eye',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.All } }); } 
+                        label: 'BEBIDAS',
+                        icon: 'fa-solid fa-wine-glass',
+                        items: [
+                            {
+                                label: 'Todas',
+                                icon: 'fa-solid fa-eye',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.All } }); } 
+                            },
+                            {
+                                label: 'Cerveza',
+                                icon: 'fa-solid fa-beer-mug-empty',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Cerveza } }); } 
+                            },
+                            {
+                                label: 'Whisky',
+                                icon: 'fa-solid fa-whiskey-glass',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Whisky } }); }
+                            },
+                            {
+                                label: 'Ron',
+                                icon: 'fa-solid fa-wine-bottle',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Ron } }); }
+                            },
+                            {
+                                label: 'Ginebra',
+                                icon: 'fa-solid fa-bottle-droplet',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Ginebra } }); }
+                            },
+                            {
+                                label: 'Vodka',
+                                icon: 'fa-solid fa-champagne-glasses',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Vodka } }); }
+                            },
+                            {
+                                label: 'Refrescos',
+                                icon: 'fa-solid fa-glass-water',
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Refrescos } }); }
+                            }
+                        ]
                     },
                     {
-                        label: 'Cerveza',
-                        icon: 'fa-solid fa-beer-mug-empty',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Cerveza } }); } 
+                        label: 'BOCADILLOS',
+                        icon: 'fa-solid fa-burger',
+                        command: () => { this.router.navigate(['articles/sandwich']); } 
                     },
                     {
-                        label: 'Whisky',
-                        icon: 'fa-solid fa-whiskey-glass',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Whisky } }); }
-                    },
-                    {
-                        label: 'Ron',
-                        icon: 'fa-solid fa-wine-bottle',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Ron } }); }
-                    },
-                    {
-                        label: 'Ginebra',
-                        icon: 'fa-solid fa-bottle-droplet',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Ginebra } }); }
-                    },
-                    {
-                        label: 'Vodka',
-                        icon: 'fa-solid fa-champagne-glasses',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Vodka } }); }
-                    },
-                    {
-                        label: 'Refrescos',
-                        icon: 'fa-solid fa-glass-water',
-                        command: () => { this.router.navigate(['/articles'], { queryParams: { drink: DrinkType.Refrescos } }); }
+                        label: 'SNACKS',
+                        icon: 'fa-solid fa-cookie-bite',
+                        command: () => { this.router.navigate(['articles/snacks']); } 
                     }
                 ]
             },

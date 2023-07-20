@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'primeflex/primeflex.css';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+
+.image-item {
+    width: 350px;
+    height: 450px;
+    display: block;
+}
+
+.thumbnail-item {
+    width: 100px;
+    height: 125px;
+}
