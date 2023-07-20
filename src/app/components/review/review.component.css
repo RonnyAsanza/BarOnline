@@ -1,0 +1,31 @@
+.bg-review {
+    background-image: url('../../../assets/bgreview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.flex {
+    flex-direction: column-reverse;
+}
+
+:host ::ng-deep .p-avatar {
+    width: 7em !important;
+    height: auto !important;
+}
+
+:host ::ng-deep .p-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.font-bold {
+    font-weight: bold;
+    /* Grosor en negrita */
+}
+
+.text-3em{
+    font-size: 3em;
+}
+.text-5em{
+    font-size: 5em;
+}

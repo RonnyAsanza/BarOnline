@@ -8,6 +8,7 @@ import { ComoComprarComponent } from './components/como-comprar/como-comprar.com
 import { InicioComponent } from './components/inicio/inicio.component';
 import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
 import { SnacksComponent } from './components/article/article-snacks/snacks.component';
+import { ReviewComponent } from './components/review/review.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'company', component: CompaniaComponent },
   { path: 'howtobuy', component: ComoComprarComponent },
   { path: 'inicio', component: InicioComponent },
+  { path: 'review', component: ReviewComponent },
   { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
 ];
 

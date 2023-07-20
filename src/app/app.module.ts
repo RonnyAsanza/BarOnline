@@ -45,6 +45,7 @@ import { GaleriaPiqueosComponent } from './components/galeria/galeria-piqueos/ga
 import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
 import { SnacksComponent } from './components/article/article-snacks/snacks.component';
 import { MenuComponent } from './components/galeria/menu/menu.component';
+import { ReviewComponent } from './components/review/review.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { MenuComponent } from './components/galeria/menu/menu.component';
     GaleriaPiqueosComponent,
     BocadillosComponent,
     SnacksComponent,
-    MenuComponent
+    MenuComponent,
+    ReviewComponent
     ],
   imports: [
     BrowserModule,
