@@ -28,7 +28,7 @@ export class FooterComponent implements OnInit {
     this.visibleModal = true;
     this.email = "";
     this.message = "";
-    this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Via MessageService' });
+    this.messageService.add({ severity: 'success', summary: 'Su mensaje ha sido enviado', detail: '¡muchas gracias!' });
     setTimeout(() => {
       this.visibleModal = false;
       this.messageService.clear();
