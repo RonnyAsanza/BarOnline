@@ -1,9 +1,68 @@
 import { Injectable } from '@angular/core';
+import { Product } from 'src/app/features/article/article.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductSnacksService {
 
-  constructor() { }
-}
+  private products: Product[] = [];
+
+  constructor() {
+    //Sustituir por llamada al servidor
+    const productData = [
+      {
+        name: 'Lays tradicionales',
+        image: '../../../assets/Complementos/lays.jpg',
+        stock: 49,
+        price: 1.99,
+        rating: 4.5
+      },
+      {
+        name: 'Lays campesionas',
+        image: '../../../assets/Complementos/layscampesinas.jpg',
+        stock: 49,
+        price: 1.99,
+        rating: 4.5
+      },
+      {
+        name: 'Ruffles de jamón',
+        image: '../../../assets/Complementos/ruffleseconoicojamon.jpg',
+        stock: 20,
+        price: 1.99,
+        rating: 5.0
+      }
+    ];
+
+    this.products = productData.map(data => this.createProduct(data));
+  }
+
+  getProducts(): Product[] {
+    return this.products;
+  }
+
+  createProduct(data: any): Product {
+    let product = new Product();
+    product.name = data.name;
+    product.image = data.image;
+    product.stock = data.stock;
+    product.price = data.price;
+    product.rating = data.rating;
+    product.category = data.category;
+    product.inventoryStatus = product.stock < 1 ? "OUTOFSTOCK" : product.stock > 36 ? "IN_STOCK" : "LOWSTOCK";
+    product.severity = this.getSeverity(product);
+    return product;
+  }
+
+  getSeverity(product: Product) {
+    switch (product.inventoryStatus) {
+      case 'IN_STOCK':
+        return 'success';
+      case 'LOWSTOCK':
+        return 'warning';
+      case 'OUTOFSTOCK':
+        return 'danger';
+      default:
+        return '';
+    }
+  }}

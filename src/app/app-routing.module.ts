@@ -7,7 +7,7 @@ import { ArticleComponent } from './components/article/article-bebidas/article.c
 import { ComoComprarComponent } from './components/como-comprar/como-comprar.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
-import { SnacksComponent } from './components/article/article-snacks/snacks/snacks.component';
+import { SnacksComponent } from './components/article/article-snacks/snacks.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full'},

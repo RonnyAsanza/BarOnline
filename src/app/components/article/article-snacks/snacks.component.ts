@@ -7,15 +7,14 @@ import { DataView } from 'primeng/dataview';
 
 //Model
 import { Product } from 'src/app/features/article/article.model';
-import { ProductBocadillosService } from '../../../services/products/product-bocadillos/product-bocadillos.service';
-
+import { ProductSnacksService } from '../../../services/products/product-snacks/product-snacks.service';
 
 @Component({
-  selector: 'app-bocadillos',
-  templateUrl: './bocadillos.component.html',
-  styleUrls: ['./bocadillos.component.css']
+  selector: 'app-snacks',
+  templateUrl: './snacks.component.html',
+  styleUrls: ['./snacks.component.css']
 })
-export class BocadillosComponent implements OnInit {
+export class SnacksComponent implements OnInit {
   public filteredProducts: Product[] = [];
   @ViewChild('dv') dataView!: DataView;
   isLoading: boolean = false;
@@ -28,7 +27,7 @@ export class BocadillosComponent implements OnInit {
   sortKey: boolean = true;
   severity: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductBocadillosService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductSnacksService) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -58,5 +57,4 @@ export class BocadillosComponent implements OnInit {
       this.sortField = value;
     }
   }
-
 }

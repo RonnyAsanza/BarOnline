@@ -43,7 +43,8 @@ import { BebidasComponent } from './components/galeria/galeria-bebidas/bebidas/b
 import { GaleriaBocadillosComponent } from './components/galeria/galeria-bocadillos/galeria-bocadillos.component';
 import { GaleriaPiqueosComponent } from './components/galeria/galeria-piqueos/galeria-piqueos.component';
 import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
-import { SnacksComponent } from './components/article/article-snacks/snacks/snacks.component';
+import { SnacksComponent } from './components/article/article-snacks/snacks.component';
+import { MenuComponent } from './components/galeria/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SnacksComponent } from './components/article/article-snacks/snacks/snac
     GaleriaBocadillosComponent,
     GaleriaPiqueosComponent,
     BocadillosComponent,
-    SnacksComponent
+    SnacksComponent,
+    MenuComponent
     ],
   imports: [
     BrowserModule,
