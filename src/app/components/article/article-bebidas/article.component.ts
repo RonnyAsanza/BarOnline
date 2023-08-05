@@ -20,6 +20,7 @@ export class ArticleComponent implements OnInit {
   public filteredProducts: Product[] = [];
   @ViewChild('dv') dataView!: DataView;
   isLoading: boolean = false;
+  sidebarVisible: boolean = false;
 
   products: Product[] = []
   product: Product = new Product;
@@ -29,6 +30,12 @@ export class ArticleComponent implements OnInit {
   sortKey: boolean = true;
   severity: string = "";
 
+  visible: boolean = false;
+
+  showDialog() {
+      this.visible = true;
+  }
+  
   constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
 
   ngOnInit() {
@@ -46,6 +53,8 @@ export class ArticleComponent implements OnInit {
       } else {
         this.router.navigate(['/articles/drinks'], { queryParams: { drink: 0 } });
       }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 

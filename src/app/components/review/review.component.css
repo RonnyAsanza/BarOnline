@@ -22,3 +22,14 @@
     font-weight: bold;
     /* Grosor en negrita */
 }
+
+
+.testimonio {
+    line-height: 1.4;
+    letter-spacing: 15px;
+    word-spacing: 4px;
+}
+
+.text-shadow{
+    text-shadow: -8px 0px 20px rgba(117, 11, 103, 0.8);
+}

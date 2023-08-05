@@ -42,6 +42,7 @@ export class BocadillosComponent implements OnInit {
       this.filteredProducts = this.productService.getProducts();
     });
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
       this.isLoading = false;
     }, 500);

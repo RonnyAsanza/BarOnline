@@ -51,6 +51,7 @@ export class BebidasComponent {
 
   navegar(ruta: string) {
     this.router.navigate([ruta]).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 

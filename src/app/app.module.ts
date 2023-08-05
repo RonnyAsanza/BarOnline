@@ -46,6 +46,9 @@ import { BocadillosComponent } from './components/article/article-bocadillos/boc
 import { SnacksComponent } from './components/article/article-snacks/snacks.component';
 import { MenuComponent } from './components/galeria/menu/menu.component';
 import { ReviewComponent } from './components/review/review.component';
+import { SidebarModule } from 'primeng/sidebar';
+import { CartComponent } from './components/cart/cart.component';
+import { PanelModule } from 'primeng/panel';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,8 @@ import { ReviewComponent } from './components/review/review.component';
     BocadillosComponent,
     SnacksComponent,
     MenuComponent,
-    ReviewComponent
+    ReviewComponent,
+    CartComponent
     ],
   imports: [
     BrowserModule,
@@ -96,6 +100,8 @@ import { ReviewComponent } from './components/review/review.component';
     MessagesModule,
     GalleriaModule,
     RadioButtonModule,
+    SidebarModule,
+    PanelModule
     ],
   providers: [],
   bootstrap: [AppComponent]

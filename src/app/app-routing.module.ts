@@ -9,9 +9,10 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { BocadillosComponent } from './components/article/article-bocadillos/bocadillos.component';
 import { SnacksComponent } from './components/article/article-snacks/snacks.component';
 import { ReviewComponent } from './components/review/review.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/inicio', pathMatch: 'full'},
+  { path: '', redirectTo: '/cart', pathMatch: 'full'},
   { path: 'articles/drinks', component: ArticleComponent },
   { path: 'articles/sandwich', component: BocadillosComponent },
   { path: 'articles/snacks', component: SnacksComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'howtobuy', component: ComoComprarComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'review', component: ReviewComponent },
-  { path: '**', redirectTo: '/inicio', pathMatch: 'full'}
+  { path: 'cart', component: CartComponent },
+  { path: '**', redirectTo: '/cart', pathMatch: 'full'}
 ];
 
 @NgModule({

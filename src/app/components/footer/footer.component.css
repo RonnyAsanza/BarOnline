@@ -1,3 +1,7 @@
-.text-xsm{
+.text-xsm {
     font-size: 0.85em;
+}
+
+.letter-sp7{
+    letter-spacing: 7px;
 }

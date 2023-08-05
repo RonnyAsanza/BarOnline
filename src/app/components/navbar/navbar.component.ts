@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, Renderer2, ElementRef, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
 import { DrinkType } from '../../enums/drink-type.enum';
@@ -10,8 +10,23 @@ import { DrinkType } from '../../enums/drink-type.enum';
 })
 export class NavbarComponent implements OnInit {
     items: MenuItem[] = [];
+    lastScrollTop: number = 0;
 
-    constructor(private router: Router) { }
+    @ViewChild('navbar') navbar!: ElementRef;
+
+    constructor(private router: Router, private renderer: Renderer2) { }
+
+    @HostListener('window:scroll', ['$event'])
+    onWindowScroll(event: any) {
+        let st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > this.lastScrollTop) {
+            this.renderer.addClass(this.navbar.nativeElement, 'hide');
+        } else {
+            this.renderer.removeClass(this.navbar.nativeElement, 'hide');
+        }
+        this.lastScrollTop = st <= 0 ? 0 : st;
+
+    }
 
     ngOnInit() {
         this.items = [
@@ -31,12 +46,12 @@ export class NavbarComponent implements OnInit {
                             {
                                 label: 'Todas',
                                 icon: 'fa-solid fa-eye',
-                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.All } }); } 
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.All } }); }
                             },
                             {
                                 label: 'Cerveza',
                                 icon: 'fa-solid fa-beer-mug-empty',
-                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Cerveza } }); } 
+                                command: () => { this.router.navigate(['articles/drinks'], { queryParams: { drink: DrinkType.Cerveza } }); }
                             },
                             {
                                 label: 'Whisky',
@@ -68,12 +83,12 @@ export class NavbarComponent implements OnInit {
                     {
                         label: 'BOCADILLOS',
                         icon: 'fa-solid fa-burger',
-                        command: () => { this.router.navigate(['articles/sandwich']); } 
+                        command: () => { this.router.navigate(['articles/sandwich']); }
                     },
                     {
                         label: 'SNACKS',
                         icon: 'fa-solid fa-cookie-bite',
-                        command: () => { this.router.navigate(['articles/snacks']); } 
+                        command: () => { this.router.navigate(['articles/snacks']); }
                     }
                 ]
             },

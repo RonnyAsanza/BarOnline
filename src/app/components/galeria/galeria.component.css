@@ -7,6 +7,15 @@
     font-weight: bold; /* Grosor en negrita */
 }
 
+.text-gallery {
+    line-height: 1.55;
+    letter-spacing: 8px;
+    word-spacing: 0px;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+
 @-webkit-keyframes focus-in-expand {
     0% {
         letter-spacing: -0.5em;

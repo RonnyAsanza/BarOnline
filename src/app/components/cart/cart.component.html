@@ -1,0 +1,46 @@
+<div class="card flex justify-content-center">
+  <p-sidebar
+    [(visible)]="sidebarVisible"
+    styleClass="w-full sm:w-30rem"
+    position="right"
+  >
+    <div class="card">
+      <div class="text-center col-12">
+        <i
+          class="fa-solid fa-cart-shopping text-6xl carrito-color slide-bottom"
+        ></i>
+        <h3 class="uppercase">carrito de compra</h3>
+        <hr style="border-top: 2px solid rgb(236, 35, 152)" />
+      </div>
+      <div class="col-12 md:col-12 lg:col-12 sm:flex-nowrap text-center">
+        <div *ngIf="!products || products.length === 0">
+          <p class="text-2xl">Tu carrito está vacío</p>
+          <p><i class="fa-solid fa-face-sad-cry text-7xl carrito-color"></i></p>
+          <span class="text-xl"
+            >Agrega algún producto y empieza a disfrutar</span
+          >
+        </div>
+        <!-- Otros elementos aquí... -->
+      </div>
+      <div
+        class="col-12 md:col-12 lg:col-12 sm:flex-nowrap text-center d-flex mt-4"
+      >
+        <p-button
+          label="Seguir Comprando"
+          styleClass="p-button-rounded p-button-help m-2 flex-fill"
+          (onClick)="onHideCart()"
+        ></p-button>
+        <p-button
+          *ngIf="products && products.length > 0"
+          label="Pagar"
+          styleClass="p-button-rounded p-button-success m-2 flex-fill"
+          (onClick)="onPay()"
+        ></p-button>
+      </div>
+    </div>
+  </p-sidebar>
+</div>
+
+<button (click)="sidebarVisible = true" style="width: 25em; height: 25em">
+  BOTON!!
+</button>

@@ -1,4 +1,21 @@
-h1{
+h1 {
     margin: 0.25em 1em 0.25em;
     font-family: fantasy;
 }
+
+.card {
+    transition: all 0.5s ease-in-out;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.card.hide {
+    transform: translateY(-100%);
+}
+
+:host ::ng-deep .p-menubar .p-menuitem-link {
+    font-size: 1.25em !important;
+}
+
+

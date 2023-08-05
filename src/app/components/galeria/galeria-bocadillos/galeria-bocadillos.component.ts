@@ -35,6 +35,7 @@ export class GaleriaBocadillosComponent implements OnInit {
 
   navegar(ruta: string) {
     this.router.navigate([ruta]).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
 }

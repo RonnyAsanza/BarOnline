@@ -1,0 +1,68 @@
+.carrito-color {
+    color: blueviolet;
+}
+
+.bg-violet {
+    background-color: blueviolet;
+}
+
+:host ::ng-deep .p-button {
+    width: 45% !important;
+}
+
+.slide-bottom {
+    -webkit-animation: slide-bottom 12s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+    animation: slide-bottom 12s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+
+@media (max-width: 600px) {
+    :host ::ng-deep .p-button {
+        width: 100% !important;
+    }
+}
+
+@-webkit-keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+    }
+
+    16.67% {
+        /* 2s de 12s es aproximadamente 16.67% */
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    20.83% {
+        /* 2.5s de 12s es aproximadamente 20.83% */
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+
+    100% {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+}
+
+@keyframes slide-bottom {
+    0% {
+        -webkit-transform: translateY(-50px);
+        transform: translateY(-50px);
+    }
+
+    16.67% {
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+
+    20.83% {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+
+    100% {
+        -webkit-transform: translateY(15px);
+        transform: translateY(15px);
+    }
+}
