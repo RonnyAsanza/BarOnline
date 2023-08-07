@@ -77,7 +77,7 @@
                   icon="fa-solid fa-cart-shopping"
                   class="md:align-self-end mb-2 p-button-rounded"
                   [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-                  (click)="sidebarVisible = true"
+                  (click)="onAddToCart(product)"
                 ></button>
               </div>
             </div>
@@ -87,3 +87,5 @@
     </p-dataView>
   </p-fieldset>
 </div>
+
+<app-cart [isCartVisible]="isCartVisible" [product]="selectedProduct" (isCartVisibleChange)="isCartVisible = $event"></app-cart>

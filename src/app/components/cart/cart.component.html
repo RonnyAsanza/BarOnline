@@ -1,6 +1,7 @@
 <div class="card flex justify-content-center">
   <p-sidebar
-    [(visible)]="sidebarVisible"
+    [(visible)]="isCartVisible"
+    (onHide)="onHideCart()"
     styleClass="w-full sm:w-30rem"
     position="right"
   >
@@ -20,7 +21,6 @@
             >Agrega algún producto y empieza a disfrutar</span
           >
         </div>
-        <!-- Otros elementos aquí... -->
       </div>
       <div
         class="col-12 md:col-12 lg:col-12 sm:flex-nowrap text-center d-flex mt-4"
@@ -40,7 +40,3 @@
     </div>
   </p-sidebar>
 </div>
-
-<button (click)="sidebarVisible = true" style="width: 25em; height: 25em">
-  BOTON!!
-</button>

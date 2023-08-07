@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 //Componentes
 import { Product } from 'src/app/features/add-cart/add-cart.model';
-import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,27 +9,39 @@ import { CartService } from '../../services/cart/cart.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+  @Input() isCartVisible: boolean = false;
+  @Input() product: Product = new Product();
+  @Output() isCartVisibleChange = new EventEmitter<boolean>();
 
-  sidebarVisible: boolean = true;
-  layout: string = 'list';
+  products: Product[] = [];
 
-  products!: Product[];
-
-  constructor(private productService: CartService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
   }
 
   totalSum() {
     return this.products.reduce((sum, product) => sum + ((product.price ?? 0) * (product.quantity ?? 0)), 0);
   }
 
-  onHideCart(){
-    this.sidebarVisible = false;
+  onHideCart() {
+    this.isCartVisible = false;
+    this.isCartVisibleChange.emit(this.isCartVisible);
   }
-  
-  onPay(){
+
+  onPay() {
     //levar al whatsapp con el listado de compras seleccionado
   }
+
+  onShowCart() {
+    this.isCartVisible = true;
+    this.isCartVisibleChange.emit(this.isCartVisible);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['product'] && changes['product'].currentValue && changes['product'].currentValue.price) {
+      this.products.push(changes['product'].currentValue);
+    }
+  }
+
 }

@@ -20,10 +20,10 @@ export class ArticleComponent implements OnInit {
   public filteredProducts: Product[] = [];
   @ViewChild('dv') dataView!: DataView;
   isLoading: boolean = false;
-  sidebarVisible: boolean = false;
+  isCartVisible: boolean = false;
+  selectedProduct: Product = new Product();
 
   products: Product[] = []
-  product: Product = new Product;
   sortOptions: SelectItem[] = [];
   sortOrder: number = 0;
   sortField: string = "";
@@ -33,10 +33,11 @@ export class ArticleComponent implements OnInit {
   visible: boolean = false;
 
   showDialog() {
-      this.visible = true;
+    this.visible = true;
   }
-  
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) {
+  }
 
   ngOnInit() {
     this.sortOptions = [
@@ -46,8 +47,8 @@ export class ArticleComponent implements OnInit {
 
     this.route.queryParams.subscribe(params => {
       let drink = params['drink'];
-      let beer = /^\d+$/.test(drink) ? parseInt(drink) : NaN;      
-      
+      let beer = /^\d+$/.test(drink) ? parseInt(drink) : NaN;
+
       if (beer >= 0 && beer <= 7) {
         this.filterByCategory(beer);
       } else {
@@ -79,13 +80,19 @@ export class ArticleComponent implements OnInit {
       this.filteredProducts = this.productService.getProducts().filter(product => product.category == categoryId);
     }
 
-      // Reinicia la paginación a la primera página
+    // Reinicia la paginación a la primera página
     if (this.dataView) {
       this.dataView.first = 0;
     }
-      setTimeout(() => {
-        this.isLoading = false;
-      }, 500);
-    
-    }
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 500);
+
+  }
+  
+  onAddToCart(product: Product) {
+    this.selectedProduct = product;
+    this.isCartVisible = true;
+  }
+
 }
