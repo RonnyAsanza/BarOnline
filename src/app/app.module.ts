@@ -49,6 +49,8 @@ import { ReviewComponent } from './components/review/review.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { CartComponent } from './components/cart/cart.component';
 import { PanelModule } from 'primeng/panel';
+import { TableModule } from 'primeng/table';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -101,7 +103,9 @@ import { PanelModule } from 'primeng/panel';
     GalleriaModule,
     RadioButtonModule,
     SidebarModule,
-    PanelModule
+    PanelModule,
+    TableModule,
+    InputNumberModule
     ],
   providers: [],
   bootstrap: [AppComponent]

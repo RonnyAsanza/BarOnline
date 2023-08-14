@@ -92,6 +92,7 @@ export class ArticleComponent implements OnInit {
   
   onAddToCart(product: Product) {
     this.selectedProduct = product;
+    this.selectedProduct.quantity = 1;
     this.isCartVisible = true;
   }
 

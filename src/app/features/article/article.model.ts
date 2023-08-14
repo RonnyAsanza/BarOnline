@@ -9,4 +9,5 @@ export class Product{
     rating?: number;
     category?: DrinkType;
     severity?: string;
+    quantity?: number;
 }

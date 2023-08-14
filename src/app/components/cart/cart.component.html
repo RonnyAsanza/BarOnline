@@ -2,8 +2,8 @@
   <p-sidebar
     [(visible)]="isCartVisible"
     (onHide)="onHideCart()"
-    styleClass="w-full sm:w-30rem"
     position="right"
+    styleClass="w-full lg:w-auto"
   >
     <div class="card">
       <div class="text-center col-12">
@@ -20,6 +20,64 @@
           <span class="text-xl"
             >Agrega algún producto y empieza a disfrutar</span
           >
+        </div>
+
+        <div class="card">
+          <p-table [value]="products" [tableStyle]="{ 'min-width': '10rem' }">
+            <ng-template pTemplate="caption">
+              <div class="flex align-items-center justify-content-between">
+                Productos
+                <p-button icon="pi pi-refresh"></p-button>
+              </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+              <tr>
+                <th>Nombre</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Unidades</th>
+                <th>Subtotal</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product>
+              <tr>
+                <td>{{ product.name }}</td>
+                <td>
+                  <img
+                    [src]="product.image"
+                    [alt]="product.name"
+                    width="100"
+                    class="shadow-4"
+                  />
+                </td>
+                <td>{{ product.price | currency : "USD" }}</td>
+                <td>
+                  <div class="flex-auto">
+                    <label class="mb-2 block font-bold" for="minmax-buttons"
+                      >Min-Max Boundaries</label
+                    >
+                    <p-inputNumber
+                      class="custom-input-number"
+                      [(ngModel)]="product.quantity"
+                      mode="decimal"
+                      [showButtons]="true"
+                      inputId="minmax-buttons"
+                      [min]="1"
+                      [max]="100"
+                    >
+                    </p-inputNumber>
+                  </div>
+                </td>
+                <td>{{ product.price * product.quantity }}</td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="summary">
+              <div class="flex align-items-center justify-content-between">
+                Un total de
+                {{ products ? products.length : 0 }} productos.
+              </div>
+            </ng-template>
+          </p-table>
         </div>
       </div>
       <div

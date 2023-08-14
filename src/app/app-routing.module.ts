@@ -12,7 +12,7 @@ import { ReviewComponent } from './components/review/review.component';
 import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/cart', pathMatch: 'full'},
+  { path: '', redirectTo: '/articles/drinks', pathMatch: 'full'},
   { path: 'articles/drinks', component: ArticleComponent },
   { path: 'articles/sandwich', component: BocadillosComponent },
   { path: 'articles/snacks', component: SnacksComponent },

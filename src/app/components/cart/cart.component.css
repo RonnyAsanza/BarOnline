@@ -10,6 +10,11 @@
     width: 45% !important;
 }
 
+::ng-deep .p-inputnumber-button-up.p-button-icon-only.p-inputnumber-button,
+::ng-deep .p-inputnumber-button-down.p-button-icon-only.p-inputnumber-button {
+    width: 1em !important;
+}
+
 .slide-bottom {
     -webkit-animation: slide-bottom 12s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
     animation: slide-bottom 12s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
