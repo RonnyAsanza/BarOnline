@@ -9,12 +9,12 @@ export class PhotoAlcoholService {
 
   getImages(): Promise<any[]> {
     const images = [
-      { itemImageSrc: '../../../assets/Whisky/jackdaniels07.jpg'},
-      { itemImageSrc: '../../../assets/Whisky/redlabel07.jpg'},
-      { itemImageSrc: '../../../assets/Whisky/ballantines1l.jpg'},
-      { itemImageSrc: '../../../assets/Whisky/j&b1l.jpg'},
-      { itemImageSrc: '../../../assets/Ron/bacardiblanco1l.jpg'},
-      { itemImageSrc: '../../../assets/Ron/bacardioro70cl.jpg'},
+      { itemImageSrc: '../../../assets/Whisky/jackdaniels07.png'},
+      { itemImageSrc: '../../../assets/Whisky/redlabel07.png'},
+      { itemImageSrc: '../../../assets/Whisky/ballantines1l.png'},
+      { itemImageSrc: '../../../assets/Whisky/j&b1l.png'},
+      { itemImageSrc: '../../../assets/Ron/bacardiblanco1l.png'},
+      { itemImageSrc: '../../../assets/Ron/bacardioro70cl.png'},
     ];
     return Promise.resolve(images);
   }

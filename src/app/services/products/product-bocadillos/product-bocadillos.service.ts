@@ -13,7 +13,7 @@ export class ProductBocadillosService {
       {
         id: 27,
         name: 'Bocadillo vegetal con anchoas',
-        image: '../../../assets/Bocadillos/bocadillo1.jpg',
+        image: '../../../assets/Bocadillos/bocadillo1.png',
         stock: 49,
         price: 3.99,
         rating: 4.5
@@ -21,7 +21,7 @@ export class ProductBocadillosService {
       {
         id: 28,
         name: 'Bocadillo de carne',
-        image: '../../../assets/Bocadillos/bocadillo2.jpg',
+        image: '../../../assets/Bocadillos/bocadillo2.png',
         stock: 49,
         price: 3.99,
         rating: 4.5
@@ -29,7 +29,7 @@ export class ProductBocadillosService {
       {
         id: 29,
         name: 'Bocadillo carne molida con cebolla',
-        image: '../../../assets/Bocadillos/bocadillo3.jpg',
+        image: '../../../assets/Bocadillos/bocadillo3.png',
         stock: 20,
         price: 2.99,
         rating: 3.0
@@ -37,7 +37,7 @@ export class ProductBocadillosService {
       {
         id: 30,
         name: 'Bocadillo vegetal de atún',
-        image: '../../../assets/Bocadillos/bocadillo4.jpg',
+        image: '../../../assets/Bocadillos/bocadillo4.png',
         stock: 49,
         price: 4.99,
         rating: 4.5

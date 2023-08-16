@@ -90,7 +90,7 @@
       >
         <p-button
           label="Seguir Comprando"
-          styleClass="p-button-rounded p-button-help m-2 flex-fill"
+          styleClass="p-button-rounded p-button-warning m-2 flex-fill"
           (onClick)="onHideCart()"
         ></p-button>
         <p-button
@@ -116,13 +116,13 @@
         <button
           pButton
           label="Cash"
-          class="p-button-success"
+          class="p-button-warning"
           (click)="selectPaymentType(TypePay.Cash)"
         ></button>
         <button
           pButton
           label="Bizum"
-          class="p-button-success"
+          class="p-button-warning"
           (click)="selectPaymentType(TypePay.Bizum)"
         ></button>
         <button

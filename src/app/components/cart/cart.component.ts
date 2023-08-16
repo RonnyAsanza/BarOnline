@@ -61,6 +61,8 @@ export class CartComponent {
     const phoneNumber = '+34658230355';
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
+    localStorage.clear(); //limpia todo 
+    //localStorage.removeItem('nombreDeLaClave'); cuando se agrege nas elementos al localstoregae
   }
 
   generateWhatsAppMessage(): string {

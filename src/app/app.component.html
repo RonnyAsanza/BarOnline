@@ -2,7 +2,7 @@
 <router-outlet></router-outlet>
 <app-footer></app-footer>
 
-<div class="cart-button-container">
+<div class="cart-button-container right">
   <a class="btn-open-cart block mb-5">
     <img
       src="../assets/icono-de-circulo-de-carrito-de-compras.png"
@@ -23,6 +23,13 @@
       class="icon-img"
     />
   </a>
+</div>
+<div class="cart-button-container left" id="scrollToTopButton">
+  <i
+    class="fa-solid fa-up-long text-4xl cursor-pointer"
+    style="color: #f1c607"
+    (click)="scrollToTop()"
+  ></i>
 </div>
 
 <app-cart

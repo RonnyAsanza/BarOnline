@@ -14,7 +14,7 @@ export class ProductSnacksService {
       {
         id: 31,
         name: 'Lays tradicionales',
-        image: '../../../assets/Complementos/lays.jpg',
+        image: '../../../assets/Complementos/lays.png',
         stock: 49,
         price: 1.99,
         rating: 4.5
@@ -22,7 +22,7 @@ export class ProductSnacksService {
       {
         id: 32,
         name: 'Lays campesionas',
-        image: '../../../assets/Complementos/layscampesinas.jpg',
+        image: '../../../assets/Complementos/layscampesinas.png',
         stock: 49,
         price: 1.99,
         rating: 4.5
@@ -30,7 +30,7 @@ export class ProductSnacksService {
       {
         id: 33,
         name: 'Ruffles de jamón',
-        image: '../../../assets/Complementos/ruffleseconoicojamon.jpg',
+        image: '../../../assets/Complementos/ruffleseconoicojamon.png',
         stock: 20,
         price: 1.99,
         rating: 5.0

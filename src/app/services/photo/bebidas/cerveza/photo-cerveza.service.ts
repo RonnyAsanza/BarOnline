@@ -9,8 +9,8 @@ export class PhotoCervezaService {
 
   getImages(): Promise<any[]> {
     const images = [
-      { itemImageSrc: '../../../assets/Cerveza/estrelladamm.jpg'},
-      { itemImageSrc: '../../../assets/Cerveza/estrellagalicia.jpg'},
+      { itemImageSrc: '../../../assets/Cerveza/estrelladamm.png'},
+      { itemImageSrc: '../../../assets/Cerveza/estrellagalicia.png'},
     ];
     return Promise.resolve(images);
   }}
