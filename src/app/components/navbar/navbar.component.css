@@ -18,4 +18,12 @@ h1 {
     font-size: 1.25em !important;
 }
 
+@media (max-width: 375px) {
+    .text-2xlf {
+        font-size: 1.5rem;
+    }
 
+    p-toast {
+        max-width: 350px !important;
+    }
+}

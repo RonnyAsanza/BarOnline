@@ -1,5 +1,3 @@
-import { DrinkType } from "src/app/enums/drink-type.enum";
-
 export class Product{
     id?: number;
     name?: string;
@@ -8,7 +6,7 @@ export class Product{
     stock: number = 0;
     price?: number;
     rating?: number;
-    category?: DrinkType;
+    category?: any;
     severity?: string;
     quantity?: number;
 }

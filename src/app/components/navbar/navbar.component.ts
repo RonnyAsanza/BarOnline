@@ -95,24 +95,7 @@ export class NavbarComponent implements OnInit {
             {
                 label: '¡OFERTAS!',
                 icon: 'fa-solid fa-bolt-lightning',
-                items: [
-                    {
-                        label: 'Cerveza',
-                        icon: 'fa-solid fa-beer-mug-empty',
-                    },
-                    {
-                        label: 'Whisky',
-                        icon: 'fa-solid fa-whiskey-glass',
-                    },
-                    {
-                        label: 'Ron',
-                        icon: 'fa-solid fa-wine-bottle',
-                    },
-                    {
-                        label: 'Ginebra',
-                        icon: 'fa-solid fa-bottle-droplet',
-                    }
-                ]
+                command: () => { this.router.navigate(['/offers']); } // Añade un comando para navegar a '/offers'
             },
             {
                 label: 'COMPAÑÍA',
@@ -131,13 +114,12 @@ export class NavbarComponent implements OnInit {
                     const element = document.getElementById('footerId');
                     if (element) element.scrollIntoView({ behavior: 'smooth' });
                 }
-            },
-            {
-                label: 'WHATSAPP',
-                icon: 'fa-brands fa-square-whatsapp fa-beat fa-lg',
-                command: () => { window.open('https://wa.me/+34658230355', '_blank'); }
             }
         ];
+    }
+
+    redirectToInicio() {
+        this.router.navigate(['/inicio']);
     }
 
 }

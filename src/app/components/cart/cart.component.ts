@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, SimpleChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, SimpleChanges, HostListener } from '@angular/core';
 import { InterceptorService } from '../../services/interceptor/interceptor.service';
 import { ConfirmationService, MessageService, ConfirmEventType } from 'primeng/api';
 
@@ -18,12 +18,14 @@ export class CartComponent {
   wayToPay: TypePay = TypePay.Cash;
   showPaymentDialog: boolean = false;
   TypePay = TypePay;
+  isMobileSmall: boolean = window.innerWidth <= 375;
 
   constructor(private interceptorService: InterceptorService,
     private confirmationService: ConfirmationService, private messageService: MessageService) { }
 
   ngOnInit() {
     this.products = this.interceptorService.getProducts();
+    this.updateIsMobile();
   }
 
   totalSum() {
@@ -133,6 +135,15 @@ export class CartComponent {
         }
       }
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.updateIsMobile();
+  }
+
+  updateIsMobile() {
+    this.isMobileSmall = window.innerWidth <= 767;
   }
 
 }

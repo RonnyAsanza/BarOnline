@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
 import { ViewChild } from '@angular/core';
 import { DataView } from 'primeng/dataview';
 

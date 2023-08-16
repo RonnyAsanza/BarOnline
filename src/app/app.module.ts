@@ -55,6 +55,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmationService } from 'primeng/api';
 import { MessageService } from 'primeng/api';
+import { OfertasComponent } from './components/ofertas/ofertas.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { MessageService } from 'primeng/api';
     SnacksComponent,
     MenuComponent,
     ReviewComponent,
-    CartComponent
+    CartComponent,
+    OfertasComponent
     ],
   imports: [
     BrowserModule,
