@@ -12,6 +12,7 @@ export class ProductSnacksService {
     //Sustituir por llamada al servidor
     const productData = [
       {
+        id: 31,
         name: 'Lays tradicionales',
         image: '../../../assets/Complementos/lays.jpg',
         stock: 49,
@@ -19,6 +20,7 @@ export class ProductSnacksService {
         rating: 4.5
       },
       {
+        id: 32,
         name: 'Lays campesionas',
         image: '../../../assets/Complementos/layscampesinas.jpg',
         stock: 49,
@@ -26,6 +28,7 @@ export class ProductSnacksService {
         rating: 4.5
       },
       {
+        id: 33,
         name: 'Ruffles de jamón',
         image: '../../../assets/Complementos/ruffleseconoicojamon.jpg',
         stock: 20,
@@ -43,6 +46,7 @@ export class ProductSnacksService {
 
   createProduct(data: any): Product {
     let product = new Product();
+    product.id = data.id;
     product.name = data.name;
     product.image = data.image;
     product.stock = data.stock;
@@ -65,4 +69,5 @@ export class ProductSnacksService {
       default:
         return '';
     }
-  }}
+  }
+}

@@ -9,6 +9,7 @@ import { DataView } from 'primeng/dataview';
 import { Product } from 'src/app/features/article/article.model';
 import { DrinkType } from 'src/app/enums/drink-type.enum';
 import { ProductService } from '../../../services/products/product-bebidas/product.service';
+import { InterceptorService } from '../../../services/interceptor/interceptor.service';
 
 @Component({
   selector: 'app-article',
@@ -36,7 +37,10 @@ export class ArticleComponent implements OnInit {
     this.visible = true;
   }
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) {
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    private productService: ProductService,
+    private interceptorService: InterceptorService) {
   }
 
   ngOnInit() {
@@ -89,11 +93,11 @@ export class ArticleComponent implements OnInit {
     }, 500);
 
   }
-  
+
   onAddToCart(product: Product) {
     this.selectedProduct = product;
-    this.selectedProduct.quantity = 1;
     this.isCartVisible = true;
-  }
 
+    this.interceptorService.addProduct(product);
+  }
 }

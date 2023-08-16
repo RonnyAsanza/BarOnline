@@ -11,6 +11,7 @@ export class ProductBocadillosService {
     //Sustituir por llamada al servidor
     const productData = [
       {
+        id: 27,
         name: 'Bocadillo vegetal con anchoas',
         image: '../../../assets/Bocadillos/bocadillo1.jpg',
         stock: 49,
@@ -18,6 +19,7 @@ export class ProductBocadillosService {
         rating: 4.5
       },
       {
+        id: 28,
         name: 'Bocadillo de carne',
         image: '../../../assets/Bocadillos/bocadillo2.jpg',
         stock: 49,
@@ -25,6 +27,7 @@ export class ProductBocadillosService {
         rating: 4.5
       },
       {
+        id: 29,
         name: 'Bocadillo carne molida con cebolla',
         image: '../../../assets/Bocadillos/bocadillo3.jpg',
         stock: 20,
@@ -32,6 +35,7 @@ export class ProductBocadillosService {
         rating: 3.0
       },
       {
+        id: 30,
         name: 'Bocadillo vegetal de atún',
         image: '../../../assets/Bocadillos/bocadillo4.jpg',
         stock: 49,
@@ -50,6 +54,7 @@ export class ProductBocadillosService {
 
   createProduct(data: any): Product {
     let product = new Product();
+    product.id = data.id;
     product.name = data.name;
     product.image = data.image;
     product.stock = data.stock;

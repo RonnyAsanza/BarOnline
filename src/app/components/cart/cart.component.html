@@ -21,14 +21,14 @@
             >Agrega algún producto y empieza a disfrutar</span
           >
         </div>
-
         <div class="card">
-          <p-table [value]="products" [tableStyle]="{ 'min-width': '10rem' }">
+          <p-table [value]="products" [tableStyle]="{ 'min-width': '20rem' }">
             <ng-template pTemplate="caption">
               <div class="flex align-items-center justify-content-between">
                 Productos
-                <p-button icon="pi pi-refresh"></p-button>
               </div>
+              <p-toast></p-toast>
+              <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
             </ng-template>
             <ng-template pTemplate="header">
               <tr>
@@ -37,6 +37,7 @@
                 <th>Precio</th>
                 <th>Unidades</th>
                 <th>Subtotal</th>
+                <th></th>
               </tr>
             </ng-template>
             <ng-template pTemplate="body" let-product>
@@ -47,34 +48,38 @@
                     [src]="product.image"
                     [alt]="product.name"
                     width="100"
-                    class="shadow-4"
+                    class="shadow-4 border-round-sm"
                   />
                 </td>
                 <td>{{ product.price | currency : "USD" }}</td>
                 <td>
                   <div class="flex-auto">
-                    <label class="mb-2 block font-bold" for="minmax-buttons"
-                      >Min-Max Boundaries</label
-                    >
                     <p-inputNumber
                       class="custom-input-number"
                       [(ngModel)]="product.quantity"
                       mode="decimal"
                       [showButtons]="true"
                       inputId="minmax-buttons"
-                      [min]="1"
-                      [max]="100"
+                      (ngModelChange)="updateQuantity(product)"
                     >
                     </p-inputNumber>
                   </div>
                 </td>
-                <td>{{ product.price * product.quantity }}</td>
+                <td>
+                  {{ product.price * product.quantity | number : "1.2-2" }} EUR
+                </td>
+                <td>
+                  <i
+                    class="fa-solid fa-trash fa-xl delete-icon"
+                    (click)="confirmDelete(product)"
+                  ></i>
+                </td>
               </tr>
             </ng-template>
             <ng-template pTemplate="summary">
               <div class="flex align-items-center justify-content-between">
-                Un total de
-                {{ products ? products.length : 0 }} productos.
+                <span>Total: {{ totalSum() }} EUR</span>
+                <span>{{ products ? products.length : 0 }} productos</span>
               </div>
             </ng-template>
           </p-table>
@@ -96,5 +101,37 @@
         ></p-button>
       </div>
     </div>
+
+    <p-dialog
+      header="Selecciona el tipo de pago"
+      [(visible)]="showPaymentDialog"
+      [breakpoints]="{ '960px': '75vw' }"
+      [style]="{ width: '50vw' }"
+      [draggable]="false"
+      [resizable]="false"
+    >
+      <p>¿Cómo te gustaría pagar?</p>
+
+      <div class="card flex flex-wrap justify-content-center gap-3">
+        <button
+          pButton
+          label="Cash"
+          class="p-button-success"
+          (click)="selectPaymentType(TypePay.Cash)"
+        ></button>
+        <button
+          pButton
+          label="Bizum"
+          class="p-button-success"
+          (click)="selectPaymentType(TypePay.Bizum)"
+        ></button>
+        <button
+          pButton
+          label="Cancelar"
+          (click)="cancelPayment()"
+          class="p-button-danger"
+        ></button>
+      </div>
+    </p-dialog>
   </p-sidebar>
 </div>

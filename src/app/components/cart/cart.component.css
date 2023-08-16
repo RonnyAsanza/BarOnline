@@ -71,3 +71,12 @@
         transform: translateY(15px);
     }
 }
+
+.delete-icon {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-icon:hover {
+    color: #ff0000;
+}

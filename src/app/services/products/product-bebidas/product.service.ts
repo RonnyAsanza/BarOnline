@@ -13,6 +13,7 @@ export class ProductService {
         const productData = [
             //Cerveza
             {
+                id: 1,
                 name: 'San Miguel 33 CL',
                 image: '../../../assets/Cerveza/sanmiguel33.jpg',
                 stock: 49,
@@ -21,6 +22,7 @@ export class ProductService {
                 category: DrinkType.Cerveza
             },
             {
+                id: 2,
                 name: 'Estrella Damm 33 CL',
                 image: '../../../assets/Cerveza/estrelladamm.jpg',
                 stock: 15,
@@ -29,6 +31,7 @@ export class ProductService {
                 category: DrinkType.Cerveza
             },
             {
+                id: 3,
                 name: 'Estrella Galicia 33 CL',
                 image: '../../../assets/Cerveza/estrellagalicia.jpg',
                 stock: 0,
@@ -39,6 +42,7 @@ export class ProductService {
 
             //Whisky
             {
+                id: 4,
                 name: 'Jack Daniels 70 CL',
                 image: '../../../assets/Whisky/jackdaniels07.jpg',
                 stock: 50,
@@ -47,6 +51,7 @@ export class ProductService {
                 category: DrinkType.Whisky
             },
             {
+                id: 5,
                 name: 'Red Label 70 CL',
                 image: '../../../assets/Whisky/redlabel07.jpg',
                 stock: 20,
@@ -55,6 +60,7 @@ export class ProductService {
                 category: DrinkType.Whisky
             },
             {
+                id: 6,
                 name: 'Ballantines 1 L',
                 image: '../../../assets/Whisky/ballantines1l.jpg',
                 stock: 10,
@@ -63,6 +69,7 @@ export class ProductService {
                 category: DrinkType.Whisky
             },
             {
+                id: 7,
                 name: 'J&B 1 L',
                 image: '../../../assets/Whisky/j&b1l.jpg',
                 stock: 50,
@@ -73,6 +80,7 @@ export class ProductService {
 
             //Ron
             {
+                id: 8,
                 name: 'Barcardí Blanco 1 L',
                 image: '../../../assets/Ron/bacardiblanco1l.jpg',
                 stock: 50,
@@ -81,6 +89,7 @@ export class ProductService {
                 category: DrinkType.Ron
             },
             {
+                id: 9,
                 name: 'Barcardí Oro 70 CL',
                 image: '../../../assets/Ron/bacardioro70cl.jpg',
                 stock: 50,
@@ -89,6 +98,7 @@ export class ProductService {
                 category: DrinkType.Ron
             },
             {
+                id: 10,
                 name: 'Barcelo 70 CL',
                 image: '../../../assets/Ron/barcelo70cl.jpg',
                 stock: 20,
@@ -97,6 +107,7 @@ export class ProductService {
                 category: DrinkType.Ron
             },
             {
+                id: 11,
                 name: 'Negrita 70 CL',
                 image: '../../../assets/Ron/negrita70cl.jpg',
                 stock: 20,
@@ -105,6 +116,7 @@ export class ProductService {
                 category: DrinkType.Ron
             },
             {
+                id: 12,
                 name: 'Brugalanejo 1 L',
                 image: '../../../assets/Ron/brugalanejo1l.jpg',
                 stock: 20,
@@ -115,6 +127,7 @@ export class ProductService {
 
             //Ginebra
             {
+                id: 13,
                 name: 'Brugalanejo 1 L',
                 image: '../../../assets/Ron/brugalanejo1l.jpg',
                 stock: 20,
@@ -125,6 +138,7 @@ export class ProductService {
 
             //Vodka
             {
+                id: 14,
                 name: 'Asolut Vodka 1 L',
                 image: '../../../assets/Vodka/absolutvodka1l.jpg',
                 stock: 20,
@@ -135,6 +149,7 @@ export class ProductService {
 
             //Refrescos
             {
+                id: 15,
                 name: 'Aquarius de Limón 1 L',
                 image: '../../../assets/Refrescos/aquariuslimon1l.jpg',
                 stock: 0,
@@ -143,6 +158,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 16,
                 name: 'Aquarius de Naranja 1 L',
                 image: '../../../assets/Refrescos/aquariusnaranja1l.jpg',
                 stock: 5,
@@ -151,6 +167,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 17,
                 name: 'Aquarius de Limón 33 CL',
                 image: '../../../assets/Refrescos/aquariuslimon33cl.jpg',
                 stock: 5,
@@ -159,6 +176,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 18,
                 name: 'Aquarius de Naranja 33 CL',
                 image: '../../../assets/Refrescos/aquariusnaranja33cl.jpg',
                 stock: 0,
@@ -167,6 +185,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 19,
                 name: 'Cocacola 2 L',
                 image: '../../../assets/Refrescos/cocacola2l.jpg',
                 stock: 25,
@@ -175,6 +194,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 20,
                 name: 'Cocacola 33 CL',
                 image: '../../../assets/Refrescos/cocacola33cl.jpg',
                 stock: 50,
@@ -183,6 +203,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 21,
                 name: 'Fanta de Naranja 2 L',
                 image: '../../../assets/Refrescos/fantanaranja2l.jpg',
                 stock: 25,
@@ -191,6 +212,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 22,
                 name: 'Fanta de Naranja 33 CL',
                 image: '../../../assets/Refrescos/fantanaranja33cl.jpg',
                 stock: 50,
@@ -199,6 +221,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 23,
                 name: 'Nestea de Limón 33 CL',
                 image: '../../../assets/Refrescos/nestealimon33cl.jpg',
                 stock: 50,
@@ -207,6 +230,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 24,
                 name: 'Nestea de Limón 1 CL',
                 image: '../../../assets/Refrescos/nestealimon015l.jpg',
                 stock: 0,
@@ -215,6 +239,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 25,
                 name: 'Sprite 2 L',
                 image: '../../../assets/Refrescos/sprite2l.jpg',
                 stock: 50,
@@ -223,6 +248,7 @@ export class ProductService {
                 category: DrinkType.Refrescos
             },
             {
+                id: 26,
                 name: 'Sprite 33 CL',
                 image: '../../../assets/Refrescos/sprite33cl.jpg',
                 stock: 50,
@@ -237,6 +263,7 @@ export class ProductService {
 
     createProduct(data: any): Product {
         let product = new Product();
+        product.id = data.id;
         product.name = data.name;
         product.image = data.image;
         product.stock = data.stock;

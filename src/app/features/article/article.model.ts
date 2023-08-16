@@ -1,6 +1,7 @@
 import { DrinkType } from "src/app/enums/drink-type.enum";
 
 export class Product{
+    id?: number;
     name?: string;
     image?: string;
     inventoryStatus?: string;

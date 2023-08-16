@@ -51,6 +51,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { ConfirmationService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -105,9 +109,15 @@ import { InputNumberModule } from 'primeng/inputnumber';
     SidebarModule,
     PanelModule,
     TableModule,
-    InputNumberModule
+    InputNumberModule,
+    ConfirmDialogModule,
+    ToastModule,
+    DialogModule
     ],
-  providers: [],
+  providers: [
+    ConfirmationService,
+    MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

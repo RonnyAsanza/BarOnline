@@ -8,6 +8,7 @@ import { DataView } from 'primeng/dataview';
 //Model
 import { Product } from 'src/app/features/article/article.model';
 import { ProductSnacksService } from '../../../services/products/product-snacks/product-snacks.service';
+import { InterceptorService } from '../../../services/interceptor/interceptor.service';
 
 @Component({
   selector: 'app-snacks',
@@ -18,6 +19,8 @@ export class SnacksComponent implements OnInit {
   public filteredProducts: Product[] = [];
   @ViewChild('dv') dataView!: DataView;
   isLoading: boolean = false;
+  isCartVisible: boolean = false;
+  selectedProduct: Product = new Product();
 
   products: Product[] = []
   product: Product = new Product;
@@ -27,7 +30,9 @@ export class SnacksComponent implements OnInit {
   sortKey: boolean = true;
   severity: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductSnacksService) { }
+  constructor(private route: ActivatedRoute,
+    private productService: ProductSnacksService,
+    private interceptorService: InterceptorService) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -57,5 +62,12 @@ export class SnacksComponent implements OnInit {
       this.sortOrder = 1;
       this.sortField = value;
     }
+  }
+
+  onAddToCart(product: Product) {
+    this.selectedProduct = product;
+    this.isCartVisible = true;
+
+    this.interceptorService.addProduct(product);
   }
 }

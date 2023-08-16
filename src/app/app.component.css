@@ -1,0 +1,76 @@
+.cart-button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.btn-whatsapp,
+.btn-open-cart {
+    position: relative;
+}
+
+.btn-open-cart {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.btn-open-cart::before,
+.btn-open-cart::after,
+.btn-whatsapp::before,
+.btn-whatsapp::after {
+    content: "";
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    animation: onda 2s infinite;
+}
+
+.btn-open-cart::before,
+.btn-open-cart::after {
+    top: 7px;
+    left: 4.5px;
+    background-color: #f1c607;
+}
+
+.btn-whatsapp::before,
+.btn-whatsapp::after {
+    top: -52px;
+    left: 10.5px;
+    background-color: #00e676;
+}
+
+.btn-whatsapp::before {
+    animation-delay: 1s;
+}
+
+.btn-whatsapp::after,
+.btn-open-cart::after {
+    animation-delay: 1.4s;
+}
+
+.btn-open-cart::before {
+    animation-delay: 1s;
+}
+
+.icon-img {
+    position: relative;
+    z-index: 2;
+    max-width: 75px;
+}
+
+@keyframes onda {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2);
+    }
+}

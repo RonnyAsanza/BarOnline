@@ -8,7 +8,7 @@ import { DataView } from 'primeng/dataview';
 //Model
 import { Product } from 'src/app/features/article/article.model';
 import { ProductBocadillosService } from '../../../services/products/product-bocadillos/product-bocadillos.service';
-
+import { InterceptorService } from '../../../services/interceptor/interceptor.service';
 
 @Component({
   selector: 'app-bocadillos',
@@ -19,6 +19,8 @@ export class BocadillosComponent implements OnInit {
   public filteredProducts: Product[] = [];
   @ViewChild('dv') dataView!: DataView;
   isLoading: boolean = false;
+  isCartVisible: boolean = false;
+  selectedProduct: Product = new Product();
 
   products: Product[] = []
   product: Product = new Product;
@@ -28,7 +30,9 @@ export class BocadillosComponent implements OnInit {
   sortKey: boolean = true;
   severity: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router, private productService: ProductBocadillosService) { }
+  constructor(private route: ActivatedRoute,
+    private productService: ProductBocadillosService,
+    private interceptorService: InterceptorService) { }
 
   ngOnInit() {
     this.isLoading = true;
@@ -58,6 +62,13 @@ export class BocadillosComponent implements OnInit {
       this.sortOrder = 1;
       this.sortField = value;
     }
+  }
+
+  onAddToCart(product: Product) {
+    this.selectedProduct = product;
+    this.isCartVisible = true;
+
+    this.interceptorService.addProduct(product);
   }
 
 }
