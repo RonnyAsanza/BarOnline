@@ -4,7 +4,8 @@
 }
 
 .font-bold {
-    font-weight: bold; /* Grosor en negrita */
+    font-weight: bold;
+    /* Grosor en negrita */
 }
 
 .text-gallery {
@@ -14,6 +15,13 @@
     text-align: left;
     text-transform: uppercase;
     font-family: cursive;
+    color: #f1c607;
+}
+
+.bg-gallery {
+    background-image: url('../../../assets/bg-ventajas.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @-webkit-keyframes focus-in-expand {

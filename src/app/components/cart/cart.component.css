@@ -1,9 +1,9 @@
 .carrito-color {
-    color: blueviolet;
+    color: #f1c607;
 }
 
-.bg-violet {
-    background-color: blueviolet;
+.bg-orange {
+    background-color: #f1c607;
 }
 
 :host ::ng-deep .p-button {

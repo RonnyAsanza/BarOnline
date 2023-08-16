@@ -8,7 +8,11 @@
       [containerStyle]="{ 'max-width': '640px' }"
     >
       <ng-template pTemplate="item" let-item>
-        <img (click)="navegar('/articles/snacks')" class="image-item" [src]="item.itemImageSrc" />
+        <img
+          (click)="navegar('/articles/snacks')"
+          class="image-item border-round-2xl"
+          [src]="item.itemImageSrc"
+        />
       </ng-template>
     </p-galleria>
   </div>
