@@ -6,6 +6,7 @@
     styleClass="w-full lg:w-auto"
   >
     <div class="card">
+      <p-toast [style]="isMobileSmall ? { maxWidth: '325px' } : {}"></p-toast>
       <div class="text-center col-12">
         <i
           class="fa-solid fa-cart-shopping text-6xl carrito-color slide-bottom"
@@ -22,9 +23,6 @@
           >
         </div>
         <div class="card" *ngIf="products != null && products.length > 0">
-          <p-toast
-            [style]="isMobileSmall ? { maxWidth: '325px' } : {}"
-          ></p-toast>
           <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
           <p-table [value]="products" [tableStyle]="{ 'min-width': '20rem' }">
             <ng-template pTemplate="caption">
