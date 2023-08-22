@@ -21,7 +21,7 @@
             >Agrega algún producto y empieza a disfrutar</span
           >
         </div>
-        <div class="card">
+        <div class="card" *ngIf="products != null && products.length > 0">
           <p-toast
             [style]="isMobileSmall ? { maxWidth: '325px' } : {}"
           ></p-toast>
@@ -30,7 +30,6 @@
             <ng-template pTemplate="caption">
               <div class="flex align-items-center justify-content-between">
                 <span>Productos</span>
-                <span>¡Con la compra de un whisky hielos gratis!</span>
               </div>
             </ng-template>
             <ng-template pTemplate="header">
@@ -85,10 +84,10 @@
                 <span>{{ products ? products.length : 0 }} productos</span>
               </div>
               <br />
-              <span
-                >Pedidos gratis a partir de 9.99 EUR en Igualada y <br />29.99
-                EUR fuera de Igualada</span
-              >
+              <span class="text-red-500"
+                >Pedidos gratis a partir de:<br />
+                9.99 EUR dentro de Igualada<br />29.99 EUR fuera de Igualada
+              </span>
             </ng-template>
           </p-table>
         </div>
