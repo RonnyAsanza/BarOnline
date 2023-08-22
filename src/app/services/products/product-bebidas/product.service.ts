@@ -34,7 +34,7 @@ export class ProductService {
                 id: 3,
                 name: 'Estrella Galicia 33 CL',
                 image: '../../../assets/Cerveza/estrellagalicia.png',
-                stock: 0,
+                stock: 20,
                 price: 1.99,
                 rating: 3.8,
                 category: DrinkType[DrinkType.Cerveza]
@@ -154,7 +154,7 @@ export class ProductService {
                 id: 15,
                 name: 'Aquarius de Limón 1 L',
                 image: '../../../assets/Refrescos/aquariuslimon1l.png',
-                stock: 0,
+                stock: 20,
                 price: 2.99,
                 rating: 4,
                 category: DrinkType[DrinkType.Refrescos]
@@ -182,7 +182,7 @@ export class ProductService {
                 id: 18,
                 name: 'Aquarius de Naranja 33 CL',
                 image: '../../../assets/Refrescos/aquariusnaranja33cl.png',
-                stock: 0,
+                stock: 20,
                 price: 1.99,
                 rating: 4,
                 category: DrinkType[DrinkType.Refrescos]
@@ -236,7 +236,7 @@ export class ProductService {
                 id: 24,
                 name: 'Nestea de Limón 1 CL',
                 image: '../../../assets/Refrescos/nestealimon015l.png',
-                stock: 0,
+                stock: 10,
                 price: 2.99,
                 rating: 5,
                 category: DrinkType[DrinkType.Refrescos]
