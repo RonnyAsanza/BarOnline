@@ -5,5 +5,16 @@ export enum DrinkType {
     Ron,
     Ginebra,
     Vodka,
-    Refrescos
+    Refrescos,
+    Ofertas
+}
+
+export enum Bocadillo {
+    All = 0,
+    Bocadillo
+}
+
+export enum Snack {
+    All = 0,
+    Snack
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/features/article/article.model';
+import { Bocadillo } from '../../../enums/drink-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,9 @@ export class ProductBocadillosService {
         image: '../../../assets/Bocadillos/bocadillo1.png',
         stock: 49,
         price: 3.99,
-        rating: 4.5
+        rating: 4.5,
+        category: Bocadillo[Bocadillo.Bocadillo]
+
       },
       {
         id: 28,
@@ -24,15 +27,17 @@ export class ProductBocadillosService {
         image: '../../../assets/Bocadillos/bocadillo2.png',
         stock: 49,
         price: 3.99,
-        rating: 4.5
+        rating: 4.5,
+        category: Bocadillo[Bocadillo.Bocadillo]
       },
       {
         id: 29,
         name: 'Bocadillo carne molida con cebolla',
         image: '../../../assets/Bocadillos/bocadillo3.png',
         stock: 20,
-        price: 2.99,
-        rating: 3.0
+        price: 3.99,
+        rating: 3.0,
+        category: Bocadillo[Bocadillo.Bocadillo]
       },
       {
         id: 30,
@@ -40,7 +45,8 @@ export class ProductBocadillosService {
         image: '../../../assets/Bocadillos/bocadillo4.png',
         stock: 49,
         price: 4.99,
-        rating: 4.5
+        rating: 4.5,
+        category: Bocadillo[Bocadillo.Bocadillo]
       },
 
     ];

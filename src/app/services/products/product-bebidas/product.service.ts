@@ -19,25 +19,25 @@ export class ProductService {
                 stock: 49,
                 price: 1.99,
                 rating: 4.5,
-                category: DrinkType.Cerveza
+                category: DrinkType[DrinkType.Cerveza]
             },
             {
                 id: 2,
                 name: 'Estrella Damm 33 CL',
                 image: '../../../assets/Cerveza/estrelladamm.png',
                 stock: 15,
-                price: 2.99,
+                price: 1.99,
                 rating: 3.8,
-                category: DrinkType.Cerveza
+                category: DrinkType[DrinkType.Cerveza]
             },
             {
                 id: 3,
                 name: 'Estrella Galicia 33 CL',
                 image: '../../../assets/Cerveza/estrellagalicia.png',
                 stock: 0,
-                price: 3.99,
+                price: 1.99,
                 rating: 3.8,
-                category: DrinkType.Cerveza
+                category: DrinkType[DrinkType.Cerveza]
             },
 
             //Whisky
@@ -48,7 +48,7 @@ export class ProductService {
                 stock: 50,
                 price: 24.99,
                 rating: 3.8,
-                category: DrinkType.Whisky
+                category: DrinkType[DrinkType.Whisky]
             },
             {
                 id: 5,
@@ -57,7 +57,7 @@ export class ProductService {
                 stock: 20,
                 price: 24.99,
                 rating: 4.5,
-                category: DrinkType.Whisky
+                category: DrinkType[DrinkType.Whisky]
             },
             {
                 id: 6,
@@ -66,7 +66,7 @@ export class ProductService {
                 stock: 10,
                 price: 19.99,
                 rating: 3.7,
-                category: DrinkType.Whisky
+                category: DrinkType[DrinkType.Whisky]
             },
             {
                 id: 7,
@@ -75,7 +75,7 @@ export class ProductService {
                 stock: 50,
                 price: 24.99,
                 rating: 5,
-                category: DrinkType.Whisky
+                category: DrinkType[DrinkType.Whisky]
             },
 
             //Ron
@@ -86,7 +86,7 @@ export class ProductService {
                 stock: 50,
                 price: 24.99,
                 rating: 5,
-                category: DrinkType.Ron
+                category: DrinkType[DrinkType.Ron]
             },
             {
                 id: 9,
@@ -95,7 +95,7 @@ export class ProductService {
                 stock: 50,
                 price: 29.99,
                 rating: 5,
-                category: DrinkType.Ron
+                category: DrinkType[DrinkType.Ron]
             },
             {
                 id: 10,
@@ -104,7 +104,7 @@ export class ProductService {
                 stock: 20,
                 price: 19.99,
                 rating: 3.5,
-                category: DrinkType.Ron
+                category: DrinkType[DrinkType.Ron]
             },
             {
                 id: 11,
@@ -113,7 +113,7 @@ export class ProductService {
                 stock: 20,
                 price: 19.99,
                 rating: 3.5,
-                category: DrinkType.Ron
+                category: DrinkType[DrinkType.Ron]
             },
             {
                 id: 12,
@@ -122,7 +122,7 @@ export class ProductService {
                 stock: 20,
                 price: 24.99,
                 rating: 4,
-                category: DrinkType.Ron
+                category: DrinkType[DrinkType.Ron]
             },
 
             //Ginebra
@@ -133,7 +133,8 @@ export class ProductService {
                 stock: 20,
                 price: 24.99,
                 rating: 4,
-                category: DrinkType.Ginebra
+                category: DrinkType[DrinkType.Ginebra]
+
             },
 
             //Vodka
@@ -144,7 +145,8 @@ export class ProductService {
                 stock: 20,
                 price: 19.99,
                 rating: 5,
-                category: DrinkType.Vodka
+                category: DrinkType[DrinkType.Vodka]
+
             },
 
             //Refrescos
@@ -155,7 +157,8 @@ export class ProductService {
                 stock: 0,
                 price: 2.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
+
             },
             {
                 id: 16,
@@ -164,7 +167,7 @@ export class ProductService {
                 stock: 5,
                 price: 2.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 17,
@@ -173,7 +176,7 @@ export class ProductService {
                 stock: 5,
                 price: 1.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 18,
@@ -182,7 +185,7 @@ export class ProductService {
                 stock: 0,
                 price: 1.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 19,
@@ -191,7 +194,7 @@ export class ProductService {
                 stock: 25,
                 price: 2.99,
                 rating: 5,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 20,
@@ -200,7 +203,7 @@ export class ProductService {
                 stock: 50,
                 price: 1.99,
                 rating: 5,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 21,
@@ -209,7 +212,7 @@ export class ProductService {
                 stock: 25,
                 price: 2.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 22,
@@ -218,7 +221,7 @@ export class ProductService {
                 stock: 50,
                 price: 1.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 23,
@@ -227,7 +230,7 @@ export class ProductService {
                 stock: 50,
                 price: 1.99,
                 rating: 5,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 24,
@@ -236,7 +239,7 @@ export class ProductService {
                 stock: 0,
                 price: 2.99,
                 rating: 5,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 25,
@@ -245,7 +248,7 @@ export class ProductService {
                 stock: 50,
                 price: 2.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
             {
                 id: 26,
@@ -254,7 +257,7 @@ export class ProductService {
                 stock: 50,
                 price: 1.99,
                 rating: 4,
-                category: DrinkType.Refrescos
+                category: DrinkType[DrinkType.Refrescos]
             },
         ];
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/features/article/article.model';
+import { Snack } from '../../../enums/drink-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class ProductSnacksService {
         image: '../../../assets/Complementos/lays.png',
         stock: 49,
         price: 1.99,
-        rating: 4.5
+        rating: 4.5,
+        category: Snack[Snack.Snack]
       },
       {
         id: 32,
@@ -25,7 +27,8 @@ export class ProductSnacksService {
         image: '../../../assets/Complementos/layscampesinas.png',
         stock: 49,
         price: 1.99,
-        rating: 4.5
+        rating: 4.5,
+        category: Snack[Snack.Snack]
       },
       {
         id: 33,
@@ -33,7 +36,8 @@ export class ProductSnacksService {
         image: '../../../assets/Complementos/ruffleseconoicojamon.png',
         stock: 20,
         price: 1.99,
-        rating: 5.0
+        rating: 5.0,
+        category: Snack[Snack.Snack]
       }
     ];
 

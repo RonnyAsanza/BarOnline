@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from 'src/app/features/article/article.model';
+import { DrinkType } from '../../../enums/drink-type.enum';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,22 @@ export class OffersService {
 
     const productData = [
       {
+        id: 41,
+        name: '¡Pack 24 Latas x 33cl Cerveza San Miguel!',
+        image: '../../../assets/Offers/packsanmiguel24.png',
+        stock: 49,
+        price: 19.99,
+        rating: 5,
+        category: DrinkType[DrinkType.Ofertas]
+      },
+      {
         id: 34,
         name: '¡Cerveza + Patatas fritas!',
         image: '../../../assets/Offers/bebida-mas-snack.png',
         stock: 49,
-        price: 2.5,
+        price: 2.49,
         rating: 4.5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       },
       {
         id: 35,
@@ -26,7 +36,7 @@ export class OffersService {
         stock: 49,
         price: 3.99,
         rating: 5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       },
       {
         id: 36,
@@ -35,7 +45,7 @@ export class OffersService {
         stock: 49,
         price: 14.99,
         rating: 5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       },
       {
         id: 37,
@@ -44,7 +54,7 @@ export class OffersService {
         stock: 49,
         price: 14.99,
         rating: 5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       },
       {
         id: 38,
@@ -53,25 +63,25 @@ export class OffersService {
         stock: 49,
         price: 14.99,
         rating: 5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       },
       {
         id: 39,
         name: '¡Pack de 24 estrella damm por el precio de 20 y un snack gratis!',
         image: '../../../assets/Offers/estrelladamm-x24.png',
         stock: 49,
-        price: 37.50,
+        price: 19.99,
         rating: 5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       },
       {
-        id: 39,
+        id: 40,
         name: '¡Super promoción de Sixpack de heineken!',
         image: '../../../assets/Offers/heineken-sixpack.png',
         stock: 49,
-        price: 9.99,
+        price: 11.99,
         rating: 5,
-        category: "offers"
+        category: DrinkType[DrinkType.Ofertas]
       }
     ];
 

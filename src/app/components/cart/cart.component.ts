@@ -16,8 +16,11 @@ export class CartComponent {
 
   products: Product[] = [];
   wayToPay: TypePay = TypePay.Cash;
+  wayUbicacion: TypeUbicacion = TypeUbicacion.Igualada;
   showPaymentDialog: boolean = false;
+  showUbicacionDialog: boolean = false;
   TypePay = TypePay;
+  TypeUbicacion = TypeUbicacion;
   isMobileSmall: boolean = window.innerWidth <= 375;
 
   constructor(private interceptorService: InterceptorService,
@@ -39,6 +42,12 @@ export class CartComponent {
   }
 
   onPay() {
+    this.showUbicacionDialog = true;
+  }
+
+  onUbicacion(type: TypeUbicacion) {
+    this.wayUbicacion = type;
+    this.showUbicacionDialog = false;
     this.showPaymentDialog = true;
   }
 
@@ -56,6 +65,7 @@ export class CartComponent {
       icon: 'fa-solid fa-face-sad-tear'
     });
     this.showPaymentDialog = false;
+    this.showUbicacionDialog = false;
   }
 
   sendMessage() {
@@ -64,10 +74,14 @@ export class CartComponent {
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
     localStorage.clear(); //limpia todo 
-    //localStorage.removeItem('nombreDeLaClave'); cuando se agrege nas elementos al localstoregae
+    //localStorage.removeItem('nombreDeLaClave'); cuando se agrege mas elementos al localstoregae
   }
 
   generateWhatsAppMessage(): string {
+    const totalSum = this.totalSum();
+    const costoEnvio = this.calculateCostoEnvio();
+    const total = totalSum + costoEnvio;
+
     let message = '*¡Hola! :)* Me gustaría comprar los siguientes productos:\n\n';
     this.products.forEach(product => {
       const price = product.price ?? 0;
@@ -75,8 +89,33 @@ export class CartComponent {
       const subtotal = (price * quantity).toFixed(2);
       message += `*${product.name}* - ${quantity} unidades - ${subtotal} EUR\n`;
     });
-    message += `\n*Total:* ${this.totalSum().toFixed(2)} EUR\n\n*Forma de pago:* ${this.wayToPay.toLocaleUpperCase()}\n\nPor favor, confirma mi pedido.`;
+
+    message += `\n*Subotal:* ${totalSum.toFixed(2)} EUR\n*Ubicación:* ${this.wayUbicacion.toString()}\n*Método de pago:* ${this.wayToPay.toLocaleUpperCase()}\n*Costo de Envío:* ${costoEnvio === 0 ? 'GRATIS' : costoEnvio.toFixed(2) + ' EUR'}`;
+    message += `\n\n*Total:* ${total.toFixed(2)}\nPor favor, confirma mi pedido.`;
+
     return message;
+  }
+
+  calculateCostoEnvio(): number {
+    if (this.wayUbicacion == TypeUbicacion.Igualada) {
+      if (this.totalSum() > 9.99) {
+        return 0;
+      }
+      else {
+        return 3.99;
+      }
+    }
+
+    if (this.wayUbicacion == TypeUbicacion.Otro) {
+      if (this.totalSum() > 29.99) {
+        return 0;
+      }
+      else {
+        return 7.99;
+      }
+    }
+
+    return 0;
   }
 
   onShowCart() {
@@ -151,4 +190,9 @@ export class CartComponent {
 enum TypePay {
   Cash = "cash",
   Bizum = "bizum"
+}
+
+enum TypeUbicacion {
+  Igualada = "Igualada",
+  Otro = "Otro"
 }
